@@ -1,7 +1,78 @@
-<section>
-  <!-- Navbar -->
-  <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
-  <div style="height: 100vh; background-color: white;"></div>
-  <!-- Footer -->
-  <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
-</section>
+<html>
+  <head>
+    <link rel="stylesheet" href="/Online-Pharmacy-Portal/pages/home/home.css" />
+    <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
+    <script async src="/Online-Pharmacy-Portal/pages/home/home.js"></script>
+    <script src="/Online-Pharmacy-Portal/assets/packages/particles/particles.js"></script>
+  </head>
+
+  <body>
+    <section>
+      <!-- Navbar -->
+      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
+      <div class="row slideshow" id="slideshow">
+        <img src="./assets/images/home/carousel/banner1.png" class="banner" />
+        <img src="./assets/images/home/carousel/banner2.png" class="banner" />
+        <img src="./assets/images/home/carousel/banner3.png" class="banner" />
+      </div>
+      <div class="w-full topSelling row justify-between">
+        <img src="./assets/images/home/meds.png" class="medLogo" />
+        <div class="w-full column">
+          <div class="TSP_Header_Bar">
+            <div class="TSP_Title blink">TOP SELLING</div>
+          </div>
+          <div class="TSP row justify-between">
+            <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/home/topSellingProduct/"; include($PATH."topSellingProduct.html"); ?>
+            <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/home/topSellingProduct/"; include($PATH."topSellingProduct.html"); ?>
+          </div>
+        </div>
+      </div>
+      <div class="particleCanvas">
+        <div id="particles-js"></div>
+        <div class="bannerTitle">EASY COMMUNICATION</div>
+        <div class="bannerChatBtn">
+          <div class="button btnNav">Open Portal</div>
+        </div>
+      </div>
+      <div class="w-full topSelling row justify-center">
+        <div class="w-full column">
+          <div
+            class="TSP_Header_Bar deliver_Header_Bar"
+           
+          >
+            <div class="TSP_Title blink">SUPER FAST DELIVERY</div>
+          </div>
+          <div class="deliveryPara">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Pellentesque ex dolor, hendrerit id porttitor eu, tincidunt ac diam.
+            Pellentesque mattis, magna ut facilisis commodo, sapien orci
+            sagittis lorem, in rhoncus ligula tellus et arcu. Sed congue metus
+            vitae tristique rhoncus. Sed at orci ac ipsum dignissim tincidunt.
+            Proin venenatis imperdiet ullamcorper. Etiam bibendum enim vel elit
+            dignissim, vitae pharetra odio tempor. Sed lacinia mattis enim,
+            vitae pharetra eros tincidunt vel. Nulla viverra non velit viverra
+            placerat. Quisque vitae efficitur purus. Duis vel leo eget tortor
+            volutpat pulvinar. Nunc congue euismod lectus a hendrerit
+          </div>
+        </div>
+        <img src="./assets/images/home/delivery.png" class="deliveryImage" />
+      </div>
+      <div class="column justify-center FAQ_Container">
+        <div class="FAQ_Content">
+          <h2 class="FAQ_Title">FAQs</h2>
+          <div id="faqs"></div>
+        </div>
+      </div>
+      <div class="btnContact w-full row justify-center">
+        <div
+          class="button btnNav"
+          style="width: auto; padding-left: 50px; padding-right: 50px"
+        >
+          Contact Us
+        </div>
+      </div>
+      <!-- Footer -->
+      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
+    </section>
+  </body>
+</html>

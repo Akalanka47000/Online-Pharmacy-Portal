@@ -1,5 +1,26 @@
 html {
   font-family: Roboto;
+  font-weight: 600;
+}
+
+html::-webkit-scrollbar {
+  width: 15px;
+  height: 100%;
+  background-color: #f5fdff;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #2e7bff;
+  transition: all 0.6s ease;
+  border-radius: 75px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #2e62ff;
+}
+
+html::-webkit-scrollbar-track:hover {
+  background-color: #e3f9ff;
 }
 
 body {
@@ -42,4 +63,34 @@ body {
 
 .h-full {
   height: 100%;
+}
+
+.button {
+  background-color: #2e7bff;
+  padding: 10px;
+  margin-left: 8px;
+  margin-right: 8px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  color: #ffffff;
+  box-shadow: 0px 3px 15px -0px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  background-color: #2e62ff;
+  box-shadow: 0px 5px 15px -0px rgba(0, 0, 0, 0.3);
+  transform: scale(1.025, 1.025);
+}
+
+.blink {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }

@@ -1,0 +1,47 @@
+.TSP_Content {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  
+.TSP_Img {
+  width: 20vw;
+  height: 20vw;
+  transition: all 0.4s ease;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px -0px rgba(0, 0, 0, 0.1);
+}
+
+.TSP_Img:hover {
+    filter: brightness(105%);
+  }
+
+@media screen and (max-width: 960px) {
+  .TSP_Img {
+    width: 35vw;
+    height: 35vw;
+  }
+
+  .TSP_Details {
+    flex-direction: column !important;
+  }
+
+  .btnViewTSP_Details {
+    margin-top: 30px;
+  }
+
+  .detailText {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+    .TSP_Content {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .TSP_Img {
+        width: 65vw;
+        height: 65vw;
+      }
+  }
