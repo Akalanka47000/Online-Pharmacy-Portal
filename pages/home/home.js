@@ -46,7 +46,7 @@ let visibilities = [];
 
 const initVisibilities = () => {
   FAQData.forEach(() => {
-    visibilities.push(true);
+    visibilities.push(false);
   });
 };
 
