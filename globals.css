@@ -1,0 +1,45 @@
+html {
+  font-family: Roboto;
+}
+
+body {
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.justify-between {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.justify-start {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.justify-end {
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
