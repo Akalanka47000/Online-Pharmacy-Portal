@@ -2,6 +2,26 @@ html {
   font-family: Roboto;
 }
 
+html::-webkit-scrollbar {
+  width: 15px;
+  height: 100%;
+  background-color: #f5fdff;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #2e7bff;
+  transition: all 0.6s ease;
+  border-radius: 75px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #2e62ff;
+}
+
+html::-webkit-scrollbar-track:hover {
+  background-color: #e3f9ff;
+}
+
 body {
   margin: 0 !important;
 }

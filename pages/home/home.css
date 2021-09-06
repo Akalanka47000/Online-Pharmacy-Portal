@@ -1,0 +1,9 @@
+.slideshow {
+  overflow: visible;
+  transition: all 1s ease;
+}
+
+.banner {
+  width: 100vw;
+}
+

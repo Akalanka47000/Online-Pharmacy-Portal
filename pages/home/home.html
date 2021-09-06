@@ -1,7 +1,21 @@
-<section>
-  <!-- Navbar -->
-  <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
-  <div style="height: 100vh; background-color: white;"></div>
-  <!-- Footer -->
-  <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
-</section>
+<html>
+  <head>
+    <link rel="stylesheet" href="/Online-Pharmacy-Portal/pages/home/home.css" />
+    <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
+    <script src="/Online-Pharmacy-Portal/pages/home/home.js"></script>
+  </head>
+  <body>
+    <section>
+      <!-- Navbar -->
+      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
+      <div class="row slideshow" id="slideshow">
+        <img src="./assets/images/home/carousel/banner1.png" class="banner" />
+        <img src="./assets/images/home/carousel/banner2.png" class="banner" />
+        <img src="./assets/images/home/carousel/banner3.png" class="banner" />
+      </div>
+      <div style="height: 100vh; background-color: white"></div>
+      <!-- Footer -->
+      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
+    </section>
+  </body>
+</html>
