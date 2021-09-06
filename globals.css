@@ -13,7 +13,7 @@ body {
 
 .column {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .justify-center {
@@ -24,4 +24,22 @@ body {
 .justify-between {
   align-items: center;
   justify-content: space-between;
+}
+
+.justify-start {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.justify-end {
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
 }
