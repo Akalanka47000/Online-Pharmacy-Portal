@@ -14,6 +14,7 @@
   height: 100vh;
   background-color: #ffffff;
   transition: all 1s ease;
+  z-index:100;
 }
 
 .navbarClosed {
@@ -50,26 +51,6 @@
 
 .navLinks {
   display: none !important;
-}
-
-.button {
-  background-color: #2e7bff;
-  padding: 10px;
-  margin-left: 8px;
-  margin-right: 8px;
-  text-align: center;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  color: #ffffff;
-  box-shadow: 0px 3px 15px -0px rgba(0, 0, 0, 0.2);
-}
-
-.button:hover {
-  background-color: #2e62ff;
-  box-shadow: 0px 5px 15px -0px rgba(0, 0, 0, 0.3);
-  transform: scale(1.025, 1.025);
 }
 
 .btnMobile {
@@ -130,13 +111,13 @@
     display: flex !important;
   }
 
-  .button {
+  .btnNav {
     width: 130px;
   }
 }
 
 @media screen and (min-width: 1160px) {
-  .button {
+  .btnNav {
     width: 150px;
   }
 }

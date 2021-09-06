@@ -1,9 +1,265 @@
 .slideshow {
   overflow: visible;
   transition: all 1s ease;
+  z-index: 0;
 }
 
 .banner {
   width: 100vw;
+  transition: all 0.4s ease;
 }
 
+.banner:hover {
+  filter: brightness(105%);
+}
+
+.topSelling {
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.medLogo {
+  width: 30vw;
+  height: 30vw;
+  margin-left: 120px;
+  margin-right: 120px;
+}
+
+.TSP_Header_Bar {
+  background-color: #2e62ff;
+  padding: 8px;
+  margin-left: 30px;
+  margin-right: 150px;
+  margin-bottom: 60px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px -0px rgba(0, 0, 0, 0.2);
+}
+
+.TSP_Title {
+  color: #ffffff;
+  font-size: 30px;
+  margin-left: 20px;
+}
+
+.TSP {
+  margin-right: 120px;
+}
+
+.particleCanvas {
+  background-color: #000000;
+  height: 380px;
+  width: 100vw;
+  position: relative;
+}
+
+.bannerTitle {
+  position: absolute;
+  left: 100px;
+  top: 160px;
+  width: 100%;
+  z-index: 1;
+  font-size: 35px;
+  color: #ffffff;
+}
+
+.bannerChatBtn {
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+  z-index: 1;
+}
+
+.deliver_Header_Bar{
+  margin-left: 80px; 
+  margin-right: 80px;
+}
+
+.deliveryImage {
+  width: 40vw;
+  margin-right: 80px;
+  box-shadow: 0px 4px 15px -0px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+
+.deliveryImage:hover {
+  filter: brightness(105%);
+}
+
+.deliveryPara {
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.FAQ_Container {
+  width: 100%;
+}
+
+.FAQ_Title {
+  color: #2e62ff;
+  font-size: 50px;
+  text-align: center;
+}
+
+.FAQ_Content {
+  width: 91vw;
+}
+
+.QA_Content {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.QA_Header {
+  background-color: #333333;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 2px 15px -0px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+}
+
+.QA_TitleText {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.QA_Header,
+.QA_TitleText :hover {
+  color: #2e7bff;
+}
+
+.bottomArrow{
+  width:30px;
+  height:30px;
+ 
+}
+
+.bottomArrowUp {
+  transform:rotate(180deg);
+}
+
+.bottomArrowDown {
+  transform:rotate(0deg);
+}
+
+.ans {
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.visibleAns {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  box-shadow: 0px 2px 15px -0px rgba(0, 0, 0, 0.25);
+  background-color: #2e7bff;
+}
+
+.invisibleAns {
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 0px;
+}
+
+.visibleAnsText{
+  pointer-events: all;
+  color: #FFFFFF
+  opacity:0;
+  transition: all 0.4s ease;
+}
+
+.invisibleAnsText{
+  pointer-events: none;
+  user-select: none;
+  color:rgba(255, 255, 0, 0.0);
+  opacity:0;
+  transition: all 0.4s ease;
+}
+
+.btnContact{
+  margin-top:80px;
+  margin-bottom:160px;
+  font-size:20px;
+}
+
+@media screen and (max-width: 960px) {
+  .medLogo {
+    width: 50vw;
+    height: 50vw;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .medLogo {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .topSelling {
+    flex-direction: column !important;
+  }
+
+  .TSP_Header_Bar {
+    width: auto;
+    margin-top: 120px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .TSP_Title {
+    font-size: 27px;
+    text-align: center;
+    margin-left: 0px;
+  }
+
+  .TSP {
+    margin-right: 0px;
+  }
+
+  .bannerTitle {
+    left: 0 !important;
+    text-align: center !important;
+  }
+
+  .deliveryImage {
+    width: 80vw;
+    margin-top: 60px;
+    margin-right: 0px;
+  }
+
+  .deliver_Header_Bar {
+    margin-top: 0px;
+    margin-left: 40px; 
+    margin-right: 40px;
+    padding-left:50px;
+    padding-right:50px;
+  }
+
+  .deliveryPara {
+    text-align: center;
+  }
+
+  .FAQ_Content {
+    width: 75vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .TSP {
+    flex-wrap: wrap;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
