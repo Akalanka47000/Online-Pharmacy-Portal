@@ -14,7 +14,8 @@
   height: 100vh;
   background-color: #ffffff;
   transition: all 1s ease;
-  z-index:100;
+  z-index: 100;
+  overflow-y: auto;
 }
 
 .navbarClosed {
@@ -40,7 +41,7 @@
 }
 
 .headingMobile {
-  margin-top: 15px;
+  margin-top: 10px;
   margin-bottom: 45px;
 }
 

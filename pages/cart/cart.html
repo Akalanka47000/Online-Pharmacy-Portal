@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>My Cart | Simple Meds</title>
+    <link rel="stylesheet" href="/Online-Pharmacy-Portal/pages/cart/cart.css" />
+    <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <script async src="/Online-Pharmacy-Portal/pages/cart/cart.js"></script>
+    <link
+      rel="stylesheet"
+      href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css"
+    />
+    <script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+  </head>
+
+  <body>
+    <section>
+      <!-- Navbar -->
+      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
+      <div class="column">
+        <div class="row justify-end orderRow">
+          <a
+            href="/Online-Pharmacy-Portal/pages/orders/orders.html"
+            data-aos="fade-left"
+          >
+            <div
+              class="button"
+              style="width: auto; padding-left: 50px; padding-right: 50px"
+            >
+              View Orders
+            </div></a
+          >
+        </div>
+        <div data-aos="fade-right">
+          <div class="MC_Header_Bar" >My Cart</div>
+        </div>
+       
+        <div id="cartItemTable" data-aos="fade-left"></div>
+      </div>
+      <!-- Footer -->
+      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
+    </section>
+  </body>
+</html>

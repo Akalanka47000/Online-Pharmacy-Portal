@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>Orders | Simple Meds</title>
+    <link
+      rel="stylesheet"
+      href="/Online-Pharmacy-Portal/pages/orders/orders.css"
+    />
+    <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <script async src="/Online-Pharmacy-Portal/pages/orders/orders.js"></script>
+    <link
+      rel="stylesheet"
+      href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css"
+    />
+    <script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+  </head>
+
+  <body>
+    <section>
+      <!-- Navbar -->
+      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
+      <div class="column">
+        <div class="row justify-center orderInfoRow">
+          <div class="orderCardRow row justify-center">
+            <div data-aos="fade-down">
+              <div class="orderRowCard column justify-center">
+                <div class="cardNumberTxt">2</div>
+                <div class="cardNameTxt">Active</div>
+              </div>
+            </div>
+            <div data-aos="fade-up">
+              <div class="orderRowCard column justify-center">
+                <div class="cardNumberTxt">3</div>
+                <div class="cardNameTxt">Completed</div>
+              </div>
+            </div>
+          </div>
+          <div data-aos="fade-left">
+            <img
+              src="/Online-Pharmacy-Portal/assets/images/orders/orderImg.jpg"
+              class="orderImage"
+            />
+          </div>
+        </div>
+        <div data-aos="fade-right">
+          <div class="MO_Header_Bar">ACTIVE ORDERS</div>
+        </div>
+        <div id="activeOrdersTable"></div>
+        <div data-aos="fade-left">
+          <div class="MO_Header_Bar">COMPLETED ORDERS</div>
+        </div>
+        <div id="completedOrdersTable"></div>
+        <div style="height: 50px"></div>
+      </div>
+      <!-- Footer -->
+      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
+    </section>
+  </body>
+</html>

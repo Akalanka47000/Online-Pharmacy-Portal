@@ -1,0 +1,173 @@
+.orderInfoRow {
+  margin: 50px;
+}
+
+.MO_Header_Bar {
+  background-color: #2e7bff;
+  padding: 15px 30px 15px 30px;
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-bottom: 60px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 15px -0px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  color: #ffffff;
+  font-size: 25px;
+  transition: all 0.4s ease;
+  cursor: default;
+}
+
+.MO_Header_Bar:hover {
+  background-color: #2e62ff;
+}
+
+.orderRowCard {
+  width: 15vw;
+  height: 15vw;
+  margin: 50px;
+  padding: 20px;
+  background-color: #2e7bff;
+  box-shadow: 0px 4px 15px -0px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+  color: #ffffff;
+  cursor: default;
+  border-radius: 5px;
+}
+
+.orderRowCard:hover {
+  background-color: #2e62ff;
+  box-shadow: 0px 5px 15px -0px rgba(0, 0, 0, 0.3);
+  transform: scale(1.015, 1.015);
+}
+
+.cardNumberTxt {
+  font-size: 50px;
+}
+
+.cardNameTxt {
+  font-size: 25px;
+}
+
+.orderImage {
+  width: 40vw;
+  margin-left: 50px;
+  margin-right: 50px;
+  box-shadow: 0px 4px 15px -0px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+
+.orderImage:hover {
+  filter: brightness(105%);
+  transform: scale(1.015, 1.015);
+}
+
+.emptyOrders {
+  font-size: 23px;
+  color: #0d2b60;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-right: 50px;
+  text-align: center;
+}
+
+.binoImage {
+  width: 25vw;
+  margin-left: 250px;
+  margin-right: 50px;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+
+.noOrderRow {
+  margin-right: 60px;
+  margin-bottom: 80px;
+}
+
+@media screen and (max-width: 1260px) {
+  .MO_Header_Bar {
+    text-align: center;
+  }
+  .orderInfoRow {
+    flex-direction: column-reverse !important;
+  }
+
+  .orderImage {
+    width: 75vw;
+    margin-bottom: 20px;
+  }
+
+  .orderRowCard {
+    width: 30vw;
+    height: 25vw;
+    margin: 20px;
+  }
+
+  .cardNumberTxt {
+    font-size: 35px;
+  }
+
+  .cardNameTxt {
+    font-size: 25px;
+  }
+
+  .emptyOrders {
+    font-size: 20px;
+  }
+
+  .binoImage {
+    width: 50vw;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+  }
+
+  .noOrderRow {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .MO_Header_Bar {
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 23px;
+  }
+  .orderCardRow {
+    flex-direction: column !important;
+  }
+
+  .orderRowCard {
+    width: 60vw;
+    height: 25vw;
+    margin: 20px;
+  }
+
+  .cardNumberTxt {
+    font-size: 30px;
+  }
+
+  .cardNameTxt {
+    font-size: 20px;
+  }
+
+  .emptyOrders {
+    font-size: 18px;
+    margin-right: 0px;
+  }
+
+  .binoImage {
+    width: 80vw;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+  }
+
+  .noOrderRow {
+    flex-direction: column !important;
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+}
