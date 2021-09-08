@@ -1,13 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(showSlides, 4000);
-  particlesJS.load(
-    "particles-js",
-    "/Online-Pharmacy-Portal/assets/packages/particles/particles.json"
-  );
-  initVisibilities();
-  renderFAQ();
-});
-
 let index = 0;
 function showSlides() {
   index++;
@@ -91,3 +81,22 @@ const renderFAQ = () => {
     faqs.innerHTML = widgets;
   });
 };
+
+const initialize = () => {
+  AOS.init({ offset: 0, duration: 1000 });
+  setTimeout(showSlides, 4000);
+  particlesJS.load(
+    "particles-js",
+    "/Online-Pharmacy-Portal/assets/packages/particles/particles.json"
+  );
+  initVisibilities();
+  renderFAQ();
+};
+
+if (document.readyState !== "loading") {
+  initialize();
+} else {
+  document.addEventListener("DOMContentLoaded", function () {
+    initialize();
+  });
+}

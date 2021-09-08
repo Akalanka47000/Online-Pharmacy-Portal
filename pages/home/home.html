@@ -1,9 +1,20 @@
 <html>
   <head>
+    <title>Home | Simple Meds</title>
     <link rel="stylesheet" href="/Online-Pharmacy-Portal/pages/home/home.css" />
     <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
     <script async src="/Online-Pharmacy-Portal/pages/home/home.js"></script>
     <script src="/Online-Pharmacy-Portal/assets/packages/particles/particles.js"></script>
+    <link
+      rel="stylesheet"
+      href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css"
+    />
+    <script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
   </head>
 
   <body>
@@ -16,8 +27,12 @@
         <img src="./assets/images/home/carousel/banner3.png" class="banner" />
       </div>
       <div class="w-full topSelling row justify-between">
-        <img src="./assets/images/home/meds.png" class="medLogo" />
-        <div class="w-full column">
+        <img
+          src="./assets/images/home/meds.png"
+          class="medLogo"
+          data-aos="fade-right"
+        />
+        <div class="w-full column" data-aos="fade-left">
           <div class="TSP_Header_Bar">
             <div class="TSP_Title blink">TOP SELLING</div>
           </div>
@@ -35,11 +50,8 @@
         </div>
       </div>
       <div class="w-full topSelling row justify-center">
-        <div class="w-full column">
-          <div
-            class="TSP_Header_Bar deliver_Header_Bar"
-           
-          >
+        <div class="w-full column" data-aos="fade-right">
+          <div class="TSP_Header_Bar deliver_Header_Bar">
             <div class="TSP_Title blink">SUPER FAST DELIVERY</div>
           </div>
           <div class="deliveryPara">
@@ -55,15 +67,17 @@
             volutpat pulvinar. Nunc congue euismod lectus a hendrerit
           </div>
         </div>
-        <img src="./assets/images/home/delivery.png" class="deliveryImage" />
+        <div data-aos="fade-left">
+          <img src="./assets/images/home/delivery.png" class="deliveryImage" />
+        </div>
       </div>
       <div class="column justify-center FAQ_Container">
         <div class="FAQ_Content">
-          <h2 class="FAQ_Title">FAQs</h2>
-          <div id="faqs"></div>
+          <h2 class="FAQ_Title" data-aos="fade-right">FAQs</h2>
+          <div id="faqs" data-aos="fade-left"></div>
         </div>
       </div>
-      <div class="btnContact w-full row justify-center">
+      <div class="btnContact w-full row justify-center" data-aos="fade-up">
         <div
           class="button btnNav"
           style="width: auto; padding-left: 50px; padding-right: 50px"

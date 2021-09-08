@@ -10,33 +10,41 @@
   <body>
     <div class="navbar row justify-between">
       <div class="row justify-center">
-        <img src="./assets/images/logo.svg" alt="logo" class="logo" />
+        <img
+          src="/Online-Pharmacy-Portal/assets/images/logo.svg"
+          alt="logo"
+          class="logo"
+        />
         <h1>SIMPLE MEDS</h1>
       </div>
 
       <div class="row justify-center navLinks">
-        <div class="button btnNav">Management</div>
+        <a href="/Online-Pharmacy-Portal/pages/admin/users/users.html">
+          <div class="button btnNav">Management</div></a
+        >
         <div class="button btnNav">Browse Medicine</div>
         <div class="button btnNav">Log In</div>
-        <div class="btnIcon">
-          <img
-            src="./assets/images/navbar/cart.svg"
-            alt="My Cart"
-            class="cartIcon icon"
-          />
-        </div>
-        <div class="btnIcon">
-          <img
-            src="./assets/images/navbar/home.svg"
-            alt="Home"
-            class="homeIcon icon"
-          />
-        </div>
+        <a href="/Online-Pharmacy-Portal/pages/cart/cart.html">
+          <div class="btnIcon">
+            <img
+              src="/Online-Pharmacy-Portal/assets/images/navbar/cart.svg"
+              alt="My Cart"
+              class="cartIcon icon"
+            /></div
+        ></a>
+        <a href="/Online-Pharmacy-Portal/index.html">
+          <div class="btnIcon">
+            <img
+              src="/Online-Pharmacy-Portal/assets/images/navbar/home.svg"
+              alt="Home"
+              class="homeIcon icon"
+            /></div
+        ></a>
       </div>
       <!-- Mobile Nav -  Menu Button -->
       <div class="hamburger" onclick="toggleMobileNav()">
         <img
-          src="./assets/images/navbar/hamburger.svg"
+          src="/Online-Pharmacy-Portal/assets/images/navbar/hamburger.svg"
           alt="Home"
           class="icon hamburgerIcon"
         />
@@ -48,7 +56,7 @@
       <div class="w-full row justify-end" style="height: 100px">
         <div class="btnIcon" onclick="toggleMobileNav()">
           <img
-            src="./assets/images/navbar/cross.svg"
+            src="/Online-Pharmacy-Portal/assets/images/navbar/cross.svg"
             alt="Close"
             class="cross icon"
           />
@@ -57,18 +65,24 @@
       <div class="h-full column justify-center">
         <div class="column justify-center headingMobile">
           <img
-            src="./assets/images/logo.svg"
+            src="/Online-Pharmacy-Portal/assets/images/logo.svg"
             alt="logo"
             class="logoMobile"
           />
           <h1 class="titleMobile">SIMPLE MEDS</h1>
         </div>
 
-        <div class="column justify-center">
-          <div class="button btnMobile">Management</div>
+        <div class="column justify-center" style="margin-bottom: 100px;">
+          <a href="/Online-Pharmacy-Portal/pages/admin/users/users.html">
+            <div class="button btnMobile">Management</div></a
+          >
           <div class="button btnMobile">Browse Medicine</div>
-          <div class="button btnMobile">View Cart</div>
-          <div class="button btnMobile">Home</div>
+          <a href="/Online-Pharmacy-Portal/pages/cart/cart.html">
+            <div class="button btnMobile">View Cart</div></a
+          >
+          <a href="/Online-Pharmacy-Portal/index.html">
+            <div class="button btnMobile">Home</div></a
+          >
           <div class="button btnMobile">Log In</div>
         </div>
       </div>

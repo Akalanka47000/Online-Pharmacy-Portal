@@ -61,6 +61,8 @@
   text-align: center;
   margin-top: 17px;
   margin-bottom: 15px;
+  padding-left:20px;
+  padding-right:20px;
 }
 
 @media screen and (max-width: 960px) {
