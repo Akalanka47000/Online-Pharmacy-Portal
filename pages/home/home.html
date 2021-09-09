@@ -45,7 +45,7 @@
       <div class="particleCanvas">
         <div id="particles-js"></div>
         <div class="bannerTitle">EASY COMMUNICATION</div>
-        <div class="bannerChatBtn">
+        <div class="bannerChatBtn" onclick="toggleChatModal()">
           <div class="button btnNav">Open Portal</div>
         </div>
       </div>
@@ -84,6 +84,13 @@
         >
           Contact Us
         </div>
+      </div>
+      <div id="userChatModal"></div>
+      <div class="FAB row justify-center" onclick="toggleChatModal()">
+        <img
+          src="/Online-Pharmacy-Portal/assets/images/chat/chat.png"
+          class="chatIcon"
+        />
       </div>
       <!-- Footer -->
       <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
