@@ -106,22 +106,26 @@ const renderModal = () => {
           placeholder="Product name"
           type="text"
           id="name"
+          required
         />
         <textarea
         class="inputField"
         placeholder="Product description"
         rows=5
         id="description"
+        required
       ></textarea>
         <input
           class="inputField"
           placeholder="Product price"
           type="number"
           id="price"
+          required
         />
         <select
           class="inputField"
           id="category"
+          required
         >
           <option value="" disabled selected>Product Category</option>
           <option value="Category 1">Category 1</option>
@@ -141,7 +145,6 @@ const renderModal = () => {
         >
           Add Product
         </button>
-        <div class="h-4"></div>
       </form>
     </div>
   </div>`;

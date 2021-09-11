@@ -38,7 +38,7 @@
 
 .TSP_Title {
   color: #ffffff;
-  font-size: 30px;
+  font-size: 28px;
   margin-left: 20px;
 }
 
@@ -190,8 +190,34 @@
 
 .btnContact{
   margin-top:80px;
-  margin-bottom:160px;
+  margin-bottom:100px;
   font-size:20px;
+}
+
+.FAB {
+  height: 90px;
+  width: 90px;
+  background-color: #2e7bff;
+  border-radius: 500px;
+  box-shadow: 0px 3px 15px -0px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  bottom: 30px;
+  left: 93%;
+  margin-bottom: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.FAB:hover {
+  background-color: #2e62ff;
+  box-shadow: 0px 5px 15px -0px rgba(0, 0, 0, 0.3);
+  transform: scale(1.025, 1.025);
+}
+
+.chatIcon {
+  width: 50px;
+  height: 50px;
 }
 
 @media screen and (max-width: 1260px) {
@@ -257,6 +283,10 @@
 
   .FAQ_Content {
     width: 75vw;
+  }
+
+  .FAB {
+    left: 70% !important;
   }
 }
 

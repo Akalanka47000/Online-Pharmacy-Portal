@@ -3,7 +3,17 @@
     <title>Home | Simple Meds</title>
     <link rel="stylesheet" href="/Online-Pharmacy-Portal/pages/home/home.css" />
     <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
-    <script async src="/Online-Pharmacy-Portal/pages/home/home.js"></script>
+    <script src="/Online-Pharmacy-Portal/pages/home/home.js"></script>
+    <link
+      rel="stylesheet"
+      href="/Online-Pharmacy-Portal/modules/chat/userChat/userChat.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/Online-Pharmacy-Portal/modules/chat/adminChat/adminChat.css"
+    />
+    <script src="/Online-Pharmacy-Portal/modules/chat/userChat/userChat.js"></script>
+    <script src="/Online-Pharmacy-Portal/modules/chat/adminChat/adminChat.js"></script>
     <script src="/Online-Pharmacy-Portal/assets/packages/particles/particles.js"></script>
     <link
       rel="stylesheet"
@@ -45,7 +55,7 @@
       <div class="particleCanvas">
         <div id="particles-js"></div>
         <div class="bannerTitle">EASY COMMUNICATION</div>
-        <div class="bannerChatBtn">
+        <div class="bannerChatBtn" onclick="toggleChatModal()">
           <div class="button btnNav">Open Portal</div>
         </div>
       </div>
@@ -84,6 +94,13 @@
         >
           Contact Us
         </div>
+      </div>
+      <div id="chatModal"></div>
+      <div class="FAB row justify-center" onclick="toggleChatModal()">
+        <img
+          src="/Online-Pharmacy-Portal/assets/images/chat/chat.png"
+          class="chatIcon"
+        />
       </div>
       <!-- Footer -->
       <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>

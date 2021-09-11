@@ -37,7 +37,6 @@ const renderModal = () => {
             />
           </div>
         </div>
-
         <div
           class="row items-center justify-center w-full"
           style="margin-bottom: 4px"
@@ -49,16 +48,19 @@ const renderModal = () => {
           placeholder="Username"
           type="text"
           id="username"
+          required
         />
         <input
           class="inputField"
           placeholder="Email"
           type="email"
           id="email"
+          required
         />
         <select
           class="inputField"
           id="userRole"
+          required
         >
           <option value="" disabled selected>User Role</option>
           <option value="Admin">Admin</option>
@@ -77,7 +79,6 @@ const renderModal = () => {
         >
           Add User
         </button>
-        <div class="h-4"></div>
       </form>
     </div>
   </div>`;
