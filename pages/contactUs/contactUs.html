@@ -1,84 +1,97 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-	<title>Contact Us | Simple Meds</title>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="/Online-Pharmacy-Portal/pages/contactUs/contactUs.css"/>
+<head>
+    <title>Contact Us | Simple Meds</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Online-Pharmacy-Portal/pages/contactUs/contactUs.css" />
     <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto"
-      rel="stylesheet"
-    />
-	<script async src="/Online-Pharmacy-Portal/pages/contactUs/contactUs.js"></script>
-    <link
-      rel="stylesheet"
-      href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    <script src="/Online-Pharmacy-Portal/pages/contactUs/contactUs.js"></script>
+    <link rel="stylesheet" href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css" />
     <script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8dwRTMZSF7sWT_7UaP76uMvpGV7Mj_Us&callback=initMap&libraries=&v=weekly"
+        async></script>
     <meta name="viewport" content="width=device-width" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1"
-    />	
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 </head>
+
 <body>
     <section>
-    <!-- Navbar -->
-		<?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
-        <div class = "column">
-        
-            <div class = "cont">
-		    
-            <h1><br>Reach Our Team</h1>
-            <h5>We love question and feedback-and we are happy to help !</h5>
-            
+        <!-- Navbar -->
+        <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
+        <div class="column">
+            <div class="cont">
+                <div class="blink pageHeading" style="margin-bottom: 15px;" data-aos="fade-left">Reach Our Team</div>
+                <div class="blink" style="font-size: 18px;" data-aos="fade-right">We love question and feedback-and we
+                    are happy to help !</div>
             </div>
-        <div class ="txt_block ">
-        <div class =adrs>
-            <h3> <br>Talk to us</h3>
-            <h5>chat with our team to discover how our products useful to you <br> Hotline - 0xxxxxxxxx<br> . </h5>
-        </div>
-        <div class = "cont2">
-            <h5>Mail to us and give us your feedback <br> simplemeds@gmail.com</h5>
-        </div>
+            <div class="row justify-center" style="position:relative; margin-bottom: 100px; margin-top: 50px;">
+                <div class="thinBar" data-aos="fade">
+                </div>
+                <div class="row justify-center" style="z-index: 3;">
+                    <div data-aos="fade-right">
+                        <div class="contactCard column justify-center">
+                            <div style="font-size: 23px;">Talk to us</div>
+                            <div style="margin-top: 20px;margin-bottom: 20px;" class="normalTxt">Chat with our team to
+                                discover how our products useful to you
 
-        
-        <div class = "txt_block">
-            <img src = "/Online-Pharmacy-Portal/assets/images/Contact Us/Contact.svg " height="40%" width="40%">
-            
-            <div class = "inputField">
-                <div class="row justify-end ord_Row"></div>
-                <form>
-                    <label for="fname">First name:</label><br>
-                    <input type="text" id="fname" name="fname"><br><br>
-                    <label for="lname">Last name:</label><br>
-                    <input type="text" id="lname" name="lname"><br><br>
-                    <label for="mail">Mail :</label><br>
-                    <input type="email" id="mail" name="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">><br><br>
-                    <label for = "ph_no">Phone Number</label><br>
-                    <input type="tel" id="ph_no" name="ph_no" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"><br><br>                                                                                                                                                                                                                                                                               
-                    <label for="adrs">Address</label><br>
-                    <textarea id="adrs" name="adrs" rows="4" cols="50"></textarea><br><br>
-                    <input type="submit" > 
-                </form>
+                            </div>
+                            <div style="font-size: 18px;">
+                                Hotline - 0XXXXXXXXX
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left">
+                        <div class="contactCard column justify-center">
+                            <img src="/Online-Pharmacy-Portal/assets/images/contactUs/googleIcon.png"
+                                class="googleIcon">
+                            <div style="margin-bottom: 20px;font-size: 16px;">Mail to us and give us your feedback
+                            </div>
+                            <div style="font-size: 16px;"> simplemeds@gmail.com</div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+
+            <div class="row justify-center" style="margin-bottom: 100px;">
+                <div data-aos="fade-right">
+                    <div id="googleMap" class="googleMap"></div>
+                </div>
+
+                <form onsubmit="" class="column contactForm">
+                    <input type="text" id="name" placeholder="Name" class="inputField" data-aos="fade-left">
+                    <input type="email" id="email" placeholder="Email" class="inputField" data-aos="fade-right" />
+                    <textarea id="message" placeholder="Message" class="inputField" rows="4" cols="50"
+                        data-aos="fade-left"></textarea><br><br>
+                    <div data-aos="fade-up">
+                        <button class="button btnSend" type="submit"
+                            style="width: 100%; padding-left: 50px; padding-right: 50px">
+                            <div class="w-full">Send</div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="cont contactBottomBar" style="margin-bottom:0px">
+            <div class="pageHeading" style="margin-bottom: 10px;" data-aos="fade-left">HEADQUARTERS</div>
+            <div class="addressTxt" data-aos="fade-right">Colombo,Sri Lanka </div>
+            <div class="addressTxt" data-aos="fade-left">
+                L-2 90 Seylan Towers, Galle Road </div>
+            <div class="addressTxt" data-aos="fade-right">
+                0112589842
+            </div>
         </div>
 
-    </div>
-    <div class = "address">
-        <h2>HEADQUARTERS</h2>
-        <h3>Colombo,SriLanka <br> L-2 90 Seylan Towers, Galle Road <br> <br> 0112589842</h3>
-    </div>
-
-    
-    
-   
-    <!-- Footer -->
-	<?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
-    </div>
+        <!-- Footer -->
+        <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
+        </div>
     </section>
-    </body>
+</body>
+
 </html>
