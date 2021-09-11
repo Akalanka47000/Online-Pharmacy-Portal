@@ -48,16 +48,19 @@ const renderModal = () => {
           placeholder="Username"
           type="text"
           id="username"
+          required
         />
         <input
           class="inputField"
           placeholder="Email"
           type="email"
           id="email"
+          required
         />
         <select
           class="inputField"
           id="userRole"
+          required
         >
           <option value="" disabled selected>User Role</option>
           <option value="Admin">Admin</option>

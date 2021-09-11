@@ -11,6 +11,22 @@ const getCartItems = () => {
   return [];
 };
 
+const navigate = () => {
+  const cartItems = getCartItems();
+  if (cartItems.length != 0) {
+    window.location.href = "/Online-Pharmacy-Portal/pages/payment/payment.html";
+  } else {
+    Swal.fire({
+      icon: "warning",
+      heightAuto: false,
+      background: "#f5fdff",
+      title: `<div style="font-size:23px">No items to checkout!</div>`,
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  }
+};
+
 const displayNoItems = () => {
   return ` <div class="emptyCartBG">
     <div class="w-full row justify-center emptyCartRow">

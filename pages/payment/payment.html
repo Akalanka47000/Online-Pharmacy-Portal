@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <title>My Cart | Simple Meds</title>
+    <link
+      rel="stylesheet"
+      href="/Online-Pharmacy-Portal/pages/payment/payment.css"
+    />
+    <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <script
+      async
+      src="/Online-Pharmacy-Portal/pages/payment/payment.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css"
+    />
+    <script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
+    <script src="/Online-Pharmacy-Portal/assets/packages/sweetalert2/sweetalert2.all.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+  </head>
+
+  <body>
+    <section>
+      <!-- Navbar -->
+      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
+      <div class="column">
+        <div style="margin-top: 50px" data-aos="fade-right">
+          <div class="PM_header_bar">PAYMENT PORTAL</div>
+        </div>
+        <div class="paymentRow row justify-center">
+          <div data-aos="fade-right">
+            <img
+              src="/Online-Pharmacy-Portal/assets/images/payment/payment.jpg"
+              class="paymentImage"
+            />
+          </div>
+          <form id="paymentForm" class="column paymentForm w-full">
+            <div data-aos="fade-down">
+              <div
+                class="PM_header_bar"
+                style="
+                  font-size: 18px;
+                  padding: 10px 20px 10px 20px;
+                  margin: 30px;
+                  margin-bottom: 50px;
+                "
+              >
+                Payment Options
+              </div>
+            </div>
+
+            <div class="row justify-between paymentMethodRow" id="paymentMethods">
+            </div>
+            <input
+              class="inputField paymentInputField"
+              placeholder="Card Number"
+              type="text"
+              id="cardNo"
+              required
+              data-aos="fade-right"
+            />
+            <div class="row justify-center">
+              <input
+                class="inputField paymentInputField"
+                style="width: 100%; margin-right: 5 px"
+                placeholder="Expiration Date"
+                type="text"
+                id="expDate"
+                required
+                data-aos="fade-right"
+              />
+              <input
+                class="inputField paymentInputField"
+                style="width: 25%; margin-left: 5px"
+                placeholder="3-Digit Code"
+                type="text"
+                id="code"
+                required
+                maxlength="3"
+                data-aos="fade-left"
+              />
+            </div>
+            <input
+              class="inputField paymentInputField"
+              placeholder="Card Owner"
+              type="text"
+              id="owner"
+              required
+              data-aos="fade-left"
+            />
+            <div
+              data-aos="fade-up"
+              style="
+                width: auto;
+                margin-left: 30px;
+                margin-right: 30px;
+              "
+            >
+              <button
+                class="button checkoutBtn"
+                type="submit"
+                style="width: 100%; padding-left: 50px; padding-right: 50px"
+              >
+                <div class="w-full">Proceed to checkout</div>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- Footer -->
+      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
+    </section>
+  </body>
+</html>
