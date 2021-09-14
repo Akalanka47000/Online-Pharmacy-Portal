@@ -1,68 +1,96 @@
 <html>
-<head>
-	<title>Delivery Address</title>
-</head>
-<body>
-	<center>
-	<table border = "1" width = "75%">
-		<tr><td width = "50%"><img src = "https://wallpapercave.com/wp/Tc5UfZq.jpg" width = "100%" > </td>
-		<td width = "50%" style = "padding-top: 10px; padding-bottom: 10px;">	
-			<center>
-			<h2>Delivery Address</h2>
-			<form method ="POST">
-				Address line 1 <br>					
-				<input type = "text" size = "50" name = "address1" placeholder = "street address, PO box, company name, c/o" required><br>
-				Address line 2 <br>
-				<input type = "text" size = "50" name = "address2" placeholder = "apartment, suite, unit, building, floor" required><br><br>
-				Town/ City <br>
-				<input type = "text" size = "50" name = "address2" required><br><br>
-				Country/ State <br>
-				<input type = "text" size = "50" name = "address2" required><br><br>
-				Post code/ ZIP <br>
-				<input type = "text" size = "50" name = "address2" placeholder = "If you don't have a postcode, please write 'No Postcode'" required><br><br>
-				<input type = "submit" id = "registered" value="Confirm Registration">
-			</form>
-			</center>	
-		</td></tr>
-	</table>
-	</center>
-	<title>Delivery Address | Simple Meds</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1 minimum-scale=1">
-	<link rel="stylesheet" href="locationDetail.css">
-	<script src="locationDetail.js"></script>
-	<link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
-	<script async src="/Online-Pharmacy-Portal/pages/contactUs/contactUs.js"></script>
-    <link rel="stylesheet" href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css"/>
+  <head>
+    <title>Delivery Address</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="/Online-Pharmacy-Portal/pages/auth/locationDetail/locationDetail.css"
+    />
+    <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
+    <script src="/Online-Pharmacy-Portal/pages/auth/locationDetail/locationDetail.js"></script>
+    <link
+      rel="stylesheet"
+      href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css"
+    />
     <script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
-</head>
-<body>
-	<section>
-	<!-- Navbar -->
-	<?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
-	<div class="row">
-		<div class="column" id ="left">
-			<img src = "https://wallpapercave.com/wp/Tc5UfZq.jpg" width = "100%" >
-		</div>
-		<div class="column" id ="right">
-			<center><h2>Delivery Address</h2></center>
-			<form method ="POST">
-				<label for="address1">Address line 1:</label><br>					
-				<input type = "text" size = "50" id = "address1" name = "address1" placeholder = "street address, PO box, company name, c/o" required><br>
-				<label for="address2">Address line 2:</label><br>
-				<input type = "text" size = "50" id = "address2" name = "address2" placeholder = "apartment, suite, unit, building, floor" required><br><br>
-				<label for="address3">Town/ City:</label><br>
-				<input type = "text" size = "50" id = "address3" name = "address3" required><br><br>
-				<label for="address4">Country/ State:</label><br>
-				<input type = "text" size = "50" id = "address4" name = "address4" required><br><br>
-				<label for="address5">Post code/ ZIP:</label><br>
-				<input type = "text" size = "50" id = "address5" name = "address5" placeholder = "If you don't have a postcode, please write 'No Postcode'" required><br><br>
-				<center><input type = "submit" id = "registered" value="Confirm Registration"></center>
-			</form>
-		</div>
-	  </div>
-	  <!-- Footer -->
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+  </head>
+  <body>
+    <section>
+      <!-- Navbar -->
+      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
+      <div class="row justify-center deliveryRow">
+        <img
+          src="https://wallpapercave.com/wp/Tc5UfZq.jpg"
+          class="loginImage"
+        />
+        <div class="column justify-center deliveryFormContainer">
+         
+          <form method="POST" class="deliveryForm column justify-center ">
+			<div class="delivery_Header_Bar">Delivery Address</div>
+            <input
+              class="inputField deliveryInput"
+              type="text"
+              size="50"
+              id="address1"
+              name="address1"
+              placeholder="Address line 1: Street address, PO box, company name, c/o"
+              required
+            />
+            <input
+              class="inputField deliveryInput"
+              type="text"
+              size="50"
+              id="address2"
+              name="address2"
+              placeholder="Address line 2: Apartment, suite, unit, building, floor"
+              required
+            />
+            <input
+              class="inputField deliveryInput"
+              type="text"
+              size="50"
+              id="address3"
+              name="address3"
+			  placeholder="Town/City"
+              required
+            />
+            <input
+              class="inputField deliveryInput"
+              type="text"
+              size="50"
+              id="address4"
+              name="address4"
+			  placeholder="Country/ State"
+              required
+            />
+            <input
+              class="inputField deliveryInput"
+              type="text"
+              size="50"
+              id="address5"
+              name="address5"
+              placeholder="Post code/ ZIP: If you don't have a postcode, please write 'No Postcode'"
+              required
+            />
+            <button
+              type="submit"
+              class="button btnConfirm"
+            >
+              Confirm Registration
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- Footer -->
       <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
-	</section>
-</body>
+    </section>
+  </body>
 </html>
