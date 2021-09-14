@@ -193,7 +193,8 @@ const renderUserList = () =>{
       userElement.innerHTML='';
       users.forEach((user,index) => {
         const userComponent = `
-            <div class="row userTableRow" data-aos="${index%2==0?"fade-right":"fade-left"}">
+        <div style="width:100%;" data-aos="${index%2==0?"fade-right":"fade-left"}">
+            <div class="row userTableRow">
               <div class="tableCell emailCell row justify-start"><img
               src="/Online-Pharmacy-Portal/assets/images/admin/users/email.svg"
               class="emailIcon"
@@ -210,7 +211,7 @@ const renderUserList = () =>{
               src="/Online-Pharmacy-Portal/assets/images/admin/bin.png"
               class="binImage"
             /></div></div>
-            </div>`;
+            </div></div>`;
           userElement.insertAdjacentHTML('beforeend', userComponent);
       });
     }
