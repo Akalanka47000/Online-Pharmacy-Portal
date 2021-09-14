@@ -26,5 +26,43 @@
 		</td></tr>
 	</table>
 	</center>
+	<title>Delivery Address | Simple Meds</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1 minimum-scale=1">
+	<link rel="stylesheet" href="locationDetail.css">
+	<script src="locationDetail.js"></script>
+	<link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+	<script async src="/Online-Pharmacy-Portal/pages/contactUs/contactUs.js"></script>
+    <link rel="stylesheet" href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css"/>
+    <script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
+</head>
+<body>
+	<section>
+	<!-- Navbar -->
+	<?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
+	<div class="row">
+		<div class="column" id ="left">
+			<img src = "https://wallpapercave.com/wp/Tc5UfZq.jpg" width = "100%" >
+		</div>
+		<div class="column" id ="right">
+			<center><h2>Delivery Address</h2></center>
+			<form method ="POST">
+				<label for="address1">Address line 1:</label><br>					
+				<input type = "text" size = "50" id = "address1" name = "address1" placeholder = "street address, PO box, company name, c/o" required><br>
+				<label for="address2">Address line 2:</label><br>
+				<input type = "text" size = "50" id = "address2" name = "address2" placeholder = "apartment, suite, unit, building, floor" required><br><br>
+				<label for="address3">Town/ City:</label><br>
+				<input type = "text" size = "50" id = "address3" name = "address3" required><br><br>
+				<label for="address4">Country/ State:</label><br>
+				<input type = "text" size = "50" id = "address4" name = "address4" required><br><br>
+				<label for="address5">Post code/ ZIP:</label><br>
+				<input type = "text" size = "50" id = "address5" name = "address5" placeholder = "If you don't have a postcode, please write 'No Postcode'" required><br><br>
+				<center><input type = "submit" id = "registered" value="Confirm Registration"></center>
+			</form>
+		</div>
+	  </div>
+	  <!-- Footer -->
+      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
+	</section>
 </body>
 </html>

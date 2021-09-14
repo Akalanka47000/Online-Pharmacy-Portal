@@ -141,7 +141,6 @@ const renderModal = () => {
         >
           Add Product
         </button>
-        <div class="h-4"></div>
       </form>
     </div>
   </div>`;

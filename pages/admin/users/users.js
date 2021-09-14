@@ -37,7 +37,6 @@ const renderModal = () => {
             />
           </div>
         </div>
-
         <div
           class="row items-center justify-center w-full"
           style="margin-bottom: 4px"
@@ -77,7 +76,6 @@ const renderModal = () => {
         >
           Add User
         </button>
-        <div class="h-4"></div>
       </form>
     </div>
   </div>`;

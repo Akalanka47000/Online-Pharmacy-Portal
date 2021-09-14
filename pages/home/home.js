@@ -46,7 +46,8 @@ const toggleVisibility = (index) => {
 };
 
 const renderFAQ = () => {
-  let widgets = [];
+  const faqs = document.getElementById("faqs");
+  faqs.innerHTML='';
   FAQData.forEach((faq, index) => {
     const QAComponent = `<div id="component${index}" class="w-full column QA_Content">
         <div
@@ -75,11 +76,20 @@ const renderFAQ = () => {
           </div>
         </div>
       </div>`;
-
-    widgets.push(QAComponent.substring(0, QAComponent.length - 1));
-    const faqs = document.getElementById("faqs");
-    faqs.innerHTML = widgets;
+    faqs.insertAdjacentHTML('beforeend', QAComponent);
   });
+};
+
+let chatModalOpen = false;
+const toggleChatModal = () => {
+  chatModalOpen = !chatModalOpen;
+  const userRole=localStorage.getItem('UserRole');
+  if(userRole=="Admin"){
+    renderAdminChatModal();
+  }else{
+    renderUserChatModal();
+  }
+
 };
 
 const initialize = () => {
