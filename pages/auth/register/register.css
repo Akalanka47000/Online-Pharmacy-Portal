@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+#left {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 500px;
+    align-items: right;
+}
+
+#right {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 500px;
+    text-align: left;
+}
+
+form{
+    text-align: center
+ }
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
