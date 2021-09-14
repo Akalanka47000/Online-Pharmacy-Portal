@@ -19,11 +19,13 @@
       href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css"
     />
     <script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
+    <script src="/Online-Pharmacy-Portal/assets/packages/sweetalert2/sweetalert2.all.min.js"></script>
     <meta name="viewport" content="width=device-width" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, minimum-scale=1"
     />
+    <?php include 'users.php';?>
   </head>
 
   <body>
@@ -66,8 +68,19 @@
         <div data-aos="fade-right">
           <div class="Admin_Header_Bar">PHARMACISTS</div>
         </div>
+        <div class="column justify-center userListHeadings" data-aos="fade-left">
+          <div class="row userTableHeading">
+            <div class="tableCell emailCell row justify-start headingCell">User Email</div>
+            <div class="tableCell usernameCell row justify-start headingCell"> Username</div>
+            <div class="tableCell userRoleCell row justify-start headingCell">User Role</div>
+            <div class="tableCell deleteCell row justify-start headingCell">Delete</div>
+          </div>
+        </div>
+        <div id="userList" class="column justify-center userList">
+        </div>
       </div>
       <div id="userModal"></div>
+      <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
       <!-- Footer -->
       <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
     </section>
