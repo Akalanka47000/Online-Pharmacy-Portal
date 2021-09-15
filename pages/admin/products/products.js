@@ -25,7 +25,7 @@ let formData = {
 let modalPurpose = "add";
 let modalOpen = false;
 let headerImage;
-let editingProductID='';
+let editingProductID = "";
 const openAddModal = () => {
   modalPurpose = "add";
   clearFormData();
@@ -52,7 +52,7 @@ const openEditModal = (
     stocks: stocks,
   };
   headerImage = image;
-  editingProductID=id;
+  editingProductID = id;
   toggleModal();
 };
 
@@ -71,7 +71,7 @@ const clearFormData = () => {
     brand: "",
     stocks: "",
   };
-  editingProductID='';
+  editingProductID = "";
 };
 
 const handleSubmit = (e) => {
@@ -80,10 +80,10 @@ const handleSubmit = (e) => {
   var data = new FormData();
   if (modalPurpose == "add") {
     data.append("function", "addProduct");
-  }else if(modalPurpose == "edit"){
+  } else if (modalPurpose == "edit") {
     data.append("function", "editProduct");
     data.append("id", editingProductID);
-  } 
+  }
   data.append("name", e.target.name.value);
   data.append("description", e.target.description.value);
   data.append("price", e.target.price.value);
@@ -283,8 +283,12 @@ const renderModal = () => {
           required
         >
           <option value="" disabled selected>Product Category</option>
-          <option value="Liquid" ${formData.category=="Liquid"?"selected":""}>Liquid</option>
-          <option value="Tablet" ${formData.category=="Tablet"?"selected":""}>Tablet</option>
+          <option value="Liquid" ${
+            formData.category == "Liquid" ? "selected" : ""
+          }>Liquid</option>
+          <option value="Tablet" ${
+            formData.category == "Tablet" ? "selected" : ""
+          }>Tablet</option>
         </select>
         <button
           type="submit"
@@ -351,13 +355,11 @@ const renderProductList = () => {
             /><div>${product.itemsSold}</div></div>
               <div class="tableCell narrowCell row justify-center"><div onclick="openEditModal('${
                 product.productID
-              }','${
-                product.productName
-              }','${product.productDescription}','${product.productPrice}','${
-          product.productCategory
-        }','${product.productBrand}','${product.availableStocks}','${
-          product.productImage
-        }',)"><img
+              }','${product.productName}','${product.productDescription}','${
+          product.productPrice
+        }','${product.productCategory}','${product.productBrand}','${
+          product.availableStocks
+        }','${product.productImage}',)"><img
               src="/Online-Pharmacy-Portal/assets/images/admin/edit.png"
               class="editImage"
             /></div></div>
