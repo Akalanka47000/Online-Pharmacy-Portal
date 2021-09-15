@@ -12,18 +12,78 @@ const setSelectedOrderTab = (orderTab) => {
   renderOrderList();
 };
 
+let formData = {
+  name: "",
+  description: "",
+  price: "",
+  category: "",
+  brand: "",
+  stocks: "",
+  image: "",
+};
+
+let modalPurpose = "add";
 let modalOpen = false;
 let headerImage;
+let editingProductID='';
+const openAddModal = () => {
+  modalPurpose = "add";
+  clearFormData();
+  toggleModal();
+};
+
+const openEditModal = (
+  id,
+  name,
+  descrip,
+  price,
+  category,
+  brand,
+  stocks,
+  image
+) => {
+  modalPurpose = "edit";
+  formData = {
+    name: name,
+    description: descrip,
+    price: price,
+    category: category,
+    brand: brand,
+    stocks: stocks,
+  };
+  headerImage = image;
+  editingProductID=id;
+  toggleModal();
+};
 
 const toggleModal = () => {
   modalOpen = !modalOpen;
   renderModal();
 };
 
+const clearFormData = () => {
+  headerImage = "";
+  formData = {
+    name: "",
+    description: "",
+    price: "",
+    category: "",
+    brand: "",
+    stocks: "",
+  };
+  editingProductID='';
+};
+
 const handleSubmit = (e) => {
   e.preventDefault();
+
   var data = new FormData();
-  data.append("function", "addProduct");
+  if (modalPurpose == "add") {
+    data.append("function", "addProduct");
+  }else if(modalPurpose == "edit"){
+    data.append("function", "editProduct");
+    data.append("id", editingProductID);
+  } 
   data.append("name", e.target.name.value);
   data.append("description", e.target.description.value);
   data.append("price", e.target.price.value);
@@ -106,17 +166,6 @@ const deleteProduct = (id) => {
   xmlhttp.send(data);
 };
 
-const editProduct = () => {
-  Swal.fire({
-    icon: "warning",
-    heightAuto: false,
-    background: "#f5fdff",
-    title: `<div style="font-size:23px">Feature coming soon</div>`,
-    showConfirmButton: false,
-    timer: 1500,
-  });
-};
-
 const encodeImage = (e) => {
   console.log(e);
   if (e && e[0]) {
@@ -160,7 +209,9 @@ const renderModal = () => {
           class="row items-center justify-center w-full"
           style="margin-bottom: 4px"
         >
-          <h2 class="modalTitle">Add Product</h2>
+          <h2 class="modalTitle">${
+            modalPurpose == "add" ? "Add Product" : "Edit Product"
+          }</h2>
         </div>
         <button class="btnImageUpload">
         <input
@@ -191,6 +242,7 @@ const renderModal = () => {
           placeholder="Product name"
           type="text"
           id="name"
+          value="${formData.name}"
           required
         />
         <textarea
@@ -199,12 +251,13 @@ const renderModal = () => {
         rows=5
         id="description"
         required
-      ></textarea>
+      >${formData.description}</textarea>
         <input
           class="inputField"
           placeholder="Product price"
           type="number"
           id="price"
+          value="${formData.price}"
           required
         />
         <input
@@ -212,6 +265,7 @@ const renderModal = () => {
         placeholder="Product Brand"
         type="text"
         id="brand"
+        value="${formData.brand}"
         required
       />
       <input
@@ -219,16 +273,18 @@ const renderModal = () => {
         placeholder="Available Stocks"
         type="number"
         id="stocks"
+        value="${formData.stocks}"
         required
       />
         <select
           class="inputField"
           id="category"
+          value="${formData.category}"
           required
         >
           <option value="" disabled selected>Product Category</option>
-          <option value="Liquid">Liquid</option>
-          <option value="Tablet">Tablet</option>
+          <option value="Liquid" ${formData.category=="Liquid"?"selected":""}>Liquid</option>
+          <option value="Tablet" ${formData.category=="Tablet"?"selected":""}>Tablet</option>
         </select>
         <button
           type="submit"
@@ -241,7 +297,7 @@ const renderModal = () => {
             margin-left: 0px;
           "
         >
-          Add Product
+          ${modalPurpose == "add" ? "Add Product" : "Edit Product"}
         </button>
       </form>
     </div>
@@ -293,7 +349,15 @@ const renderProductList = () => {
               src="/Online-Pharmacy-Portal/assets/images/admin/products/sold.png"
               class="productInfoIcon" style="width:30px;height:30px;"
             /><div>${product.itemsSold}</div></div>
-              <div class="tableCell narrowCell row justify-center"><div onclick="editProduct()"><img
+              <div class="tableCell narrowCell row justify-center"><div onclick="openEditModal('${
+                product.productID
+              }','${
+                product.productName
+              }','${product.productDescription}','${product.productPrice}','${
+          product.productCategory
+        }','${product.productBrand}','${product.availableStocks}','${
+          product.productImage
+        }',)"><img
               src="/Online-Pharmacy-Portal/assets/images/admin/edit.png"
               class="editImage"
             /></div></div>
@@ -312,12 +376,11 @@ const renderProductList = () => {
   xmlhttp.send(data);
 };
 
-
 const renderOrderList = () => {
   var data = new FormData();
-  if(selectedOrderTab=="active"){
+  if (selectedOrderTab == "active") {
     data.append("function", "getActiveOrders");
-  }else{
+  } else {
     data.append("function", "getCompletedOrders");
   }
   var xmlhttp = new XMLHttpRequest();
@@ -353,7 +416,7 @@ const renderOrderList = () => {
               class="productInfoIcon" style="width:30px;height:30px;"
             /><div>${order.orderStatus}</div></div>
             </div></div>`;
-          orderElement.insertAdjacentHTML("beforeend", orderComponent);
+        orderElement.insertAdjacentHTML("beforeend", orderComponent);
       });
     }
   };

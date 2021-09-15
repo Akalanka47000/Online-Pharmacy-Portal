@@ -27,8 +27,6 @@ if($function =="getAllProducts"){
     
 }else if($function =="addProduct"){
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        // $password_string = '!@#$%*&abcdefghijklmnpqrstuwxyzABCDEFGHJKLMNPQRSTUWXYZ23456789';
-        // $password = substr(str_shuffle($password_string), 0, 12);
 
         $id=uniqid();
         $name=$_POST["name"];
@@ -46,6 +44,32 @@ if($function =="getAllProducts"){
     
         if ($conn->query($sql) === TRUE) {
           $result="{\"success\":true,\"message\":\"Product added successfully\"}";
+        } else {
+          $result="{\"success\":false,\"message\":\"".$conn->error."\"}";
+        }
+    
+        echo $result;
+    }
+    
+}else if($function =="editProduct"){
+    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+        $id=$_POST["id"];
+        $name=$_POST["name"];
+        $description=$_POST["description"];
+        $image=$_POST["image"];
+        $price=$_POST["price"];
+        $category=$_POST["category"];
+        $brand=$_POST["brand"];
+        $stocks=$_POST["stocks"];
+    
+        $sql = "UPDATE Products SET productName='$name', productDescription='$description', productImage='$image', productPrice='$price', productCategory='$category', productBrand='$brand', availableStocks='$stocks'
+        WHERE productID='$id' ";
+    
+        $result='';
+    
+        if ($conn->query($sql) === TRUE) {
+          $result="{\"success\":true,\"message\":\"Product updated successfully\"}";
         } else {
           $result="{\"success\":false,\"message\":\"".$conn->error."\"}";
         }
