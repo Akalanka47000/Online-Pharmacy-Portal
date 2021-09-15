@@ -207,14 +207,13 @@
   .userTableHeading {
     display: none !important;
   }
-  .userTableRow {
-    margin-bottom: 30px;
-  }
+
   .userTableRow:hover {
     transform: scale(1, 1);
   }
 
   .userTableRow {
+    margin-bottom: 30px;
     flex-direction: column !important;
   }
 

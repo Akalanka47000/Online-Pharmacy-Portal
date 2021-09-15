@@ -9,6 +9,7 @@ const setSelectedOrderTab = (orderTab) => {
     document.getElementById("completedTab").style.backgroundColor = "#2e62ff";
     document.getElementById("activeTab").style.backgroundColor = "#333333";
   }
+  renderOrderList();
 };
 
 let modalOpen = false;
@@ -21,15 +22,99 @@ const toggleModal = () => {
 
 const handleSubmit = (e) => {
   e.preventDefault();
-  const formData = {
-    name: e.target.name.value,
-    description: e.target.description.value,
-    price: e.target.price.value,
-    category: e.target.category.value,
-    photo: headerImage,
+  var data = new FormData();
+  data.append("function", "addProduct");
+  data.append("name", e.target.name.value);
+  data.append("description", e.target.description.value);
+  data.append("price", e.target.price.value);
+  data.append("category", e.target.category.value);
+  data.append("brand", e.target.brand.value);
+  data.append("stocks", e.target.stocks.value);
+  data.append("image", headerImage);
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      const result = JSON.parse(this.responseText);
+      if (result.success == true) {
+        toggleModal();
+        let timerInterval;
+        Swal.fire({
+          icon: "success",
+          heightAuto: false,
+          background: "#f5fdff",
+          title: `<div style="font-size:23px">${result.message}</div>`,
+          showConfirmButton: false,
+          timer: 1500,
+          willClose: () => {
+            clearInterval(timerInterval);
+          },
+        }).then(() => {
+          window.location.reload();
+        });
+      } else {
+        Swal.fire({
+          icon: "warning",
+          heightAuto: false,
+          background: "#f5fdff",
+          title: `<div style="font-size:23px">${result.message}</div>`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    }
   };
-  console.log(formData);
-  toggleModal();
+  xmlhttp.open("POST", "products.php", true);
+  xmlhttp.send(data);
+};
+
+const deleteProduct = (id) => {
+  var data = new FormData();
+  data.append("function", "deleteProduct");
+  data.append("productID", id);
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      const result = JSON.parse(this.responseText);
+      if (result.success == true) {
+        let timerInterval;
+        Swal.fire({
+          icon: "success",
+          heightAuto: false,
+          background: "#f5fdff",
+          title: `<div style="font-size:23px">${result.message}</div>`,
+          showConfirmButton: false,
+          timer: 1500,
+          willClose: () => {
+            clearInterval(timerInterval);
+          },
+        }).then(() => {
+          window.location.reload();
+        });
+      } else {
+        Swal.fire({
+          icon: "warning",
+          heightAuto: false,
+          background: "#f5fdff",
+          title: `<div style="font-size:23px">${result.message}</div>`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    }
+  };
+  xmlhttp.open("POST", "products.php", true);
+  xmlhttp.send(data);
+};
+
+const editProduct = () => {
+  Swal.fire({
+    icon: "warning",
+    heightAuto: false,
+    background: "#f5fdff",
+    title: `<div style="font-size:23px">Feature coming soon</div>`,
+    showConfirmButton: false,
+    timer: 1500,
+  });
 };
 
 const encodeImage = (e) => {
@@ -122,15 +207,28 @@ const renderModal = () => {
           id="price"
           required
         />
+        <input
+        class="inputField"
+        placeholder="Product Brand"
+        type="text"
+        id="brand"
+        required
+      />
+      <input
+        class="inputField"
+        placeholder="Available Stocks"
+        type="number"
+        id="stocks"
+        required
+      />
         <select
           class="inputField"
           id="category"
           required
         >
           <option value="" disabled selected>Product Category</option>
-          <option value="Category 1">Category 1</option>
-          <option value="Category 2">Category 2</option>
-          <option value="Category 3">Category 3</option>
+          <option value="Liquid">Liquid</option>
+          <option value="Tablet">Tablet</option>
         </select>
         <button
           type="submit"
@@ -156,9 +254,118 @@ const renderModal = () => {
   }
 };
 
+const renderProductList = () => {
+  var data = new FormData();
+  data.append("function", "getAllProducts");
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      const products = JSON.parse(this.responseText);
+      const productElement = document.getElementById("productList");
+      productElement.innerHTML = "";
+      products.forEach((product, index) => {
+        const productComponent = `
+        <div style="width:100%;" data-aos="${
+          index % 2 == 0 ? "fade-right" : "fade-left"
+        }">
+            <div class="row productTableRow">
+              <div class="tableCell wideCell row justify-start"><img
+              src="/Online-Pharmacy-Portal/assets/images/admin/products/tag.png"
+              class="productInfoIcon" style="width:30px;height:20px;"
+            /><div>${product.productName}</div></div>
+              <div class="tableCell wideCell row justify-start"><img
+              src="/Online-Pharmacy-Portal/assets/images/admin/products/descrip.png"
+              class="productInfoIcon" style="width:30px;height:30px;"
+            /><div>${product.productDescription}</div></div>
+              <div class="tableCell narrowCell row justify-start"><img
+              src="/Online-Pharmacy-Portal/assets/images/admin/products/category.png"
+              class="productInfoIcon" style="width:30px;height:30px;"
+            /><div>${product.productCategory}</div></div>
+            <div class="tableCell narrowCell row justify-start"><img
+              src="/Online-Pharmacy-Portal/assets/images/admin/products/price.png"
+              class="productInfoIcon" style="width:30px;height:30px;"
+            /><div>${product.productPrice}</div></div>
+            <div class="tableCell narrowCell row justify-start"><img
+              src="/Online-Pharmacy-Portal/assets/images/admin/products/stocks.png"
+              class="productInfoIcon" style="width:30px;height:30px;"
+            /><div>${product.availableStocks}</div></div>
+            <div class="tableCell narrowCell row justify-start"><img
+              src="/Online-Pharmacy-Portal/assets/images/admin/products/sold.png"
+              class="productInfoIcon" style="width:30px;height:30px;"
+            /><div>${product.itemsSold}</div></div>
+              <div class="tableCell narrowCell row justify-center"><div onclick="editProduct()"><img
+              src="/Online-Pharmacy-Portal/assets/images/admin/edit.png"
+              class="editImage"
+            /></div></div>
+            <div class="tableCell narrowCell row justify-center"><div onclick="deleteProduct('${
+              product.productID
+            }')"><img
+            src="/Online-Pharmacy-Portal/assets/images/admin/bin.png"
+            class="binImage"
+          /></div></div>
+            </div></div>`;
+        productElement.insertAdjacentHTML("beforeend", productComponent);
+      });
+    }
+  };
+  xmlhttp.open("POST", "products.php", true);
+  xmlhttp.send(data);
+};
+
+
+const renderOrderList = () => {
+  var data = new FormData();
+  if(selectedOrderTab=="active"){
+    data.append("function", "getActiveOrders");
+  }else{
+    data.append("function", "getCompletedOrders");
+  }
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      const orders = JSON.parse(this.responseText);
+      const orderElement = document.getElementById("orderList");
+      orderElement.innerHTML = "";
+      orders.forEach((order, index) => {
+        const orderComponent = `
+        <div style="width:100%;" data-aos="${
+          index % 2 == 0 ? "fade-right" : "fade-left"
+        }">
+            <div class="row productTableRow">
+              <div class="tableCell narrowCell row justify-start"><img
+              src="/Online-Pharmacy-Portal/assets/images/admin/products/id.png"
+              class="productInfoIcon" style="width:30px;height:20px;"
+            /><div>${order.orderID}</div></div>
+              <div class="tableCell wideCell row justify-start"><img
+              src="/Online-Pharmacy-Portal/assets/images/admin/users/email.svg"
+              class="productInfoIcon" style="width:30px;height:30px;"
+            /><div>${order.email}</div></div>
+              <div class="tableCell wideCell row justify-start"><img
+              src="/Online-Pharmacy-Portal/assets/images/admin/products/tag.png"
+              class="productInfoIcon" style="width:30px;height:20px;"
+            /><div>${order.productName}</div></div>
+            <div class="tableCell wideCell row justify-start"><img
+              src="/Online-Pharmacy-Portal/assets/images/admin/products/date.png"
+              class="productInfoIcon" style="width:30px;height:30px;"
+            /><div>${order.placedDate}</div></div>
+            <div class="tableCell narrowCell row justify-start"><img
+              src="/Online-Pharmacy-Portal/assets/images/admin/products/status.png"
+              class="productInfoIcon" style="width:30px;height:30px;"
+            /><div>${order.orderStatus}</div></div>
+            </div></div>`;
+          orderElement.insertAdjacentHTML("beforeend", orderComponent);
+      });
+    }
+  };
+  xmlhttp.open("POST", "products.php", true);
+  xmlhttp.send(data);
+};
+
 const initialize = () => {
   AOS.init({ offset: 0, duration: 1000 });
   setSelectedOrderTab("active");
+  renderProductList();
+  renderOrderList();
   renderModal();
 };
 

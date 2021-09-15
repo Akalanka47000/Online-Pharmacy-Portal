@@ -129,7 +129,6 @@ const renderModal = () => {
           placeholder="Username"
           type="text"
           id="username"
-          name="username"
           required
         />
         <input
@@ -137,7 +136,6 @@ const renderModal = () => {
           placeholder="Email"
           type="email"
           id="email"
-          name="email"
           required
         />
         <input
@@ -145,13 +143,11 @@ const renderModal = () => {
           placeholder="Password"
           type="password"
           id="password"
-          name="password"
           required
         />
         <select
           class="inputField"
           id="userRole"
-          name="userRole"
           required
         >
           <option value="" disabled selected>User Role</option>

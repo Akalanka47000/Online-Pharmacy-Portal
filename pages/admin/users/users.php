@@ -13,8 +13,9 @@ if ($conn->connect_error) {
 }
 
 $function=$_POST["function"];
+
 if($function =="getUsers"){
-    $sql = "SELECT * FROM Users";
+    $sql = "SELECT * FROM Users WHERE userRole!='User'";
     $result = $conn->query($sql);
     
     $results = array();
@@ -23,6 +24,7 @@ if($function =="getUsers"){
     }
 
     echo json_encode($results);
+    
 }else if($function =="addUser"){
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         // $password_string = '!@#$%*&abcdefghijklmnpqrstuwxyzABCDEFGHJKLMNPQRSTUWXYZ23456789';
@@ -46,6 +48,7 @@ if($function =="getUsers"){
     
         echo $result;
     }
+    
 }else if($function =="deleteUser"){
     $email=$_POST["email"];
     $sql = "DELETE FROM Users WHERE email='$email'";
