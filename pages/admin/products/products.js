@@ -279,7 +279,6 @@ const renderModal = () => {
         <select
           class="inputField"
           id="category"
-          value="${formData.category}"
           required
         >
           <option value="" disabled selected>Product Category</option>
