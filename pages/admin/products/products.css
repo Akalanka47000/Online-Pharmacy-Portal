@@ -132,6 +132,94 @@
   object-fit: cover;
 }
 
+.productListHeadings {
+  width: auto;
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-top: 60px;
+  border-radius: 5px;
+}
+
+.productList {
+  width: auto;
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-bottom: 80px;
+}
+
+.productTableHeading {
+  width: 100%;
+  box-shadow: 0px 3px 15px -0px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: all 0.4s ease;
+  color: #ffffff;
+  text-align: left;
+  background-color: #2e7bff;
+}
+
+.productTableHeading:hover {
+  background-color: #2e62ff;
+}
+
+.productTableRow {
+  width: 100%;
+  box-shadow: 0px 3px 15px -0px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.productTableRow:hover {
+  transform: scale(1.005, 1.005);
+}
+
+.tableCell {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+}
+
+.headingCell{
+  font-weight: 700 !important;
+}
+
+.wideCell {
+  width: 40vw !important;
+}
+
+.narrowCell {
+  width: 10vw !important;
+}
+
+
+.productInfoIcon {
+  display: none;
+}
+
+
+.binImage {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.editImage{
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+}
+
+.orderList{
+  width: auto;
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-bottom: 80px;
+}
+
 @media screen and (max-width: 960px) {
   .admin_Header_Bar {
     text-align: center;
@@ -146,6 +234,37 @@
   .camImage {
     width: 65px;
     height: 50px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .productList {
+    width: auto;
+    margin-left: 60px;
+    margin-right: 60px;
+    overflow-x: auto;
+  }
+
+  .productTableHeading {
+    display: none !important;
+  }
+
+  .productTableRow:hover {
+    transform: scale(1, 1);
+  }
+
+  .productTableRow {
+    margin-bottom: 30px;
+    flex-direction: column !important;
+  }
+
+  .tableCell {
+    width: auto !important;
+  }
+
+  .productInfoIcon {
+    display: flex;
+    margin-right: 20px;
   }
 }
 

@@ -19,6 +19,7 @@
       href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css"
     />
     <script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
+    <script src="/Online-Pharmacy-Portal/assets/packages/sweetalert2/sweetalert2.all.min.js"></script>
     <meta name="viewport" content="width=device-width" />
     <meta
       name="viewport"
@@ -55,12 +56,27 @@
             <div
               class="button"
               style="width: auto; padding-left: 50px; padding-right: 50px"
-              onclick="toggleModal()"
+              onclick="openAddModal()"
             >
               Add New Product
             </div>
           </div>
         </div>
+        <div class="column justify-center productListHeadings" data-aos="fade-left">
+          <div class="row productTableHeading">
+            <div class="tableCell wideCell row justify-start headingCell">Name</div>
+            <div class="tableCell wideCell row justify-start headingCell">Description</div>
+            <div class="tableCell narrowCell row justify-start headingCell">Category</div>
+            <div class="tableCell narrowCell row justify-start headingCell">Price ($)</div>
+            <div class="tableCell narrowCell row justify-start headingCell">Stocks</div>
+            <div class="tableCell narrowCell row justify-start headingCell">Sold</div>
+            <div class="tableCell narrowCell row justify-center headingCell">Edit</div>
+            <div class="tableCell narrowCell row justify-center headingCell">Delete</div>
+          </div>
+        </div>
+        <div id="productList" class="column justify-center productList">
+        </div>
+        <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
         <div data-aos="fade-right">
           <div class="Admin_Header_Bar">ORDERS</div>
         </div>
@@ -82,6 +98,16 @@
             Completed Order Requests
           </div>
         </div>
+        <div class="column justify-center productListHeadings" style="margin-top: 0px;" data-aos="fade-left">
+          <div class="row productTableHeading">
+            <div class="tableCell narrowCell row justify-start headingCell">Order ID</div>
+            <div class="tableCell wideCell row justify-start headingCell">Customer Email</div>
+            <div class="tableCell wideCell row justify-start headingCell">Product Name</div>
+            <div class="tableCell wideCell row justify-start headingCell">Order Date</div>
+            <div class="tableCell narrowCell row justify-start headingCell">Order Status</div>
+          </div>
+        </div>
+        <div id="orderList" class="column justify-center orderList">
       </div>
       <div id="productModal"></div>
       <!-- Footer -->

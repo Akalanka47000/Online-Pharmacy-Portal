@@ -1,19 +1,12 @@
 const initialize = () => {
   AOS.init({ offset: 0, duration: 1000 });
-  const cartItems = getCartItems();
-  const element = document.getElementById("cartItemTable");
-  if (cartItems.length == 0) {
-    element.innerHTML = displayNoItems();
-  }
+  renderCartItems();
 };
 
-const getCartItems = () => {
-  return [];
-};
+let cartEmpty = true;
 
 const navigate = () => {
-  const cartItems = getCartItems();
-  if (cartItems.length != 0) {
+  if (!cartEmpty) {
     window.location.href = "/Online-Pharmacy-Portal/pages/payment/payment.html";
   } else {
     Swal.fire({
@@ -27,8 +20,82 @@ const navigate = () => {
   }
 };
 
+const renderCartItems = () => {
+  localStorage.setItem("Email", "akalankaperera128@gmail.com");
+  const email = localStorage.getItem("Email");
+  var data = new FormData();
+  data.append("function", "getCartItems");
+  data.append("email", email);
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      const cartItems = JSON.parse(this.responseText);
+      const element = document.getElementById("cartItemTable");
+      if (cartItems.length > 0) {
+        cartEmpty = false;
+        element.innerHTML = getHeadings();
+        displayCartItems(cartItems);
+      } else {
+        cartEmpty = true;
+        element.innerHTML = displayNoItems();
+      }
+    }
+  };
+  xmlhttp.open("POST", "cart.php", true);
+  xmlhttp.send(data);
+};
+
+const getHeadings = () => {
+  return `
+  <div class="column justify-center headings" data-aos="fade-left">
+    <div class="row tableHeadings">
+      <div class="tableCell wideCell row justify-start headingCell">Product Name</div>
+      <div class="tableCell wideCell row justify-start headingCell">Product Description</div>
+      <div class="tableCell narrowCell row justify-start headingCell">Price ($)</div>
+      <div class="tableCell narrowCell row justify-start headingCell">Category</div>
+      <div class="tableCell narrowCell row justify-start headingCell">Brand</div>
+    </div>
+  </div>
+  <div id="itemList" class="column justify-start itemList">
+  `;
+};
+
+const displayCartItems = (items) => {
+  const orderElement = document.getElementById("itemList");
+  orderElement.innerHTML = "";
+  items.forEach((cartItem, index) => {
+    const component = `
+    <div style="width:100%;" data-aos="${
+      index % 2 == 0 ? "fade-right" : "fade-left"
+    }">
+        <div class="row tableRow">
+          <div class="tableCell wideCell row justify-start"><img
+          src="/Online-Pharmacy-Portal/assets/images/admin/products/id.png"
+          class="productInfoIcon" style="width:30px;height:20px;"
+        /><div>${cartItem.productName}</div></div>
+          <div class="tableCell wideCell row justify-start"><img
+          src="/Online-Pharmacy-Portal/assets/images/admin/products/descrip.png"
+          class="productInfoIcon" style="width:30px;height:30px;"
+        /><div>${cartItem.productDescription}</div></div>
+          <div class="tableCell narrowCell row justify-start"><img
+          src="/Online-Pharmacy-Portal/assets/images/admin/products/price.png"
+          class="productInfoIcon" style="width:30px;height:30px;"
+        /><div>${cartItem.productPrice}</div></div>
+        <div class="tableCell narrowCell row justify-start"><img
+        src="/Online-Pharmacy-Portal/assets/images/admin/products/category.png"
+        class="productInfoIcon" style="width:30px;height:30px;"
+      /><div>${cartItem.productCategory}</div></div>
+      <div class="tableCell narrowCell row justify-start"><img
+      src="/Online-Pharmacy-Portal/assets/images/admin/products/brand.png"
+      class="productInfoIcon" style="width:30px;height:30px;"
+    /><div>${cartItem.productBrand}</div></div>
+        </div></div>`;
+    orderElement.insertAdjacentHTML("beforeend", component);
+  });
+};
+
 const displayNoItems = () => {
-  return ` <div class="emptyCartBG">
+  return ` <div class="emptyCartBG" data-aos="fade-left">
     <div class="w-full row justify-center emptyCartRow">
       <img
         src="/Online-Pharmacy-Portal/assets/images/cart/emptyCart.png"

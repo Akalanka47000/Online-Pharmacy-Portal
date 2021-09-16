@@ -96,6 +96,94 @@
   font-size: 15px;
 }
 
+.userListHeadings {
+  width: auto;
+  margin-left: 60px;
+  margin-right: 60px;
+  border-radius: 5px;
+}
+
+.userList {
+  width: auto;
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-bottom: 80px;
+}
+
+.userTableHeading {
+  width: 100%;
+  box-shadow: 0px 3px 15px -0px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: all 0.4s ease;
+  color: #ffffff;
+  text-align: left;
+  background-color: #2e7bff;
+}
+
+.userTableHeading:hover {
+  background-color: #2e62ff;
+}
+
+.userTableRow {
+  width: 100%;
+  box-shadow: 0px 3px 15px -0px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.userTableRow:hover {
+  transform: scale(1.005, 1.005);
+}
+
+.tableCell {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+}
+
+.headingCell{
+  font-weight: 700 !important;
+}
+
+.emailCell {
+  width: 40vw !important;
+}
+
+.usernameCell {
+  width: 100% !important;
+}
+
+.userRoleCell {
+  width: 10vw !important;
+}
+
+.deleteCell {
+  width: 3vw !important;
+}
+
+.userIcon {
+  display: none;
+}
+
+.emailIcon {
+  display: none;
+}
+
+.roleIcon {
+  display: none;
+}
+
+.binImage {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 960px) {
   .admin_Header_Bar {
     text-align: center;
@@ -105,6 +193,54 @@
     width: 55vw;
     margin-right: auto;
     margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .userList {
+    width: auto;
+    margin-left: 60px;
+    margin-right: 60px;
+    overflow-x: auto;
+  }
+
+  .userTableHeading {
+    display: none !important;
+  }
+
+  .userTableRow:hover {
+    transform: scale(1, 1);
+  }
+
+  .userTableRow {
+    margin-bottom: 30px;
+    flex-direction: column !important;
+  }
+
+  .tableCell {
+    width: auto !important;
+  }
+
+  .userIcon {
+    display: flex;
+    height: 30px;
+    width: 25px;
+    margin-left: 2px;
+    margin-right: 22px;
+  }
+
+  .emailIcon {
+    display: flex;
+    height: 30px;
+    width: 30px;
+    margin-right: 20px;
+  }
+
+  .roleIcon {
+    display: flex;
+    height: 30px;
+    width: 30px;
+    margin-right: 20px;
   }
 }
 
