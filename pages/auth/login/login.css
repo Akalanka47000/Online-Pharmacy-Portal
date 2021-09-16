@@ -1,35 +1,91 @@
-* {
-    box-sizing: border-box;
-}
+.loginImage {
+    width: 40vw;
+    margin-left: 120px;
+    margin-right: 60px;
+    border-radius: 10px;
+  }
+  
+  .loginFormContainer {
+    width: 100%;
+    min-height: 90vh;
+  }
+  
+  .loginForm {
+    width: 75%;
+    margin-right: 120px;
+    box-shadow: 0px 3px 15px -0px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  
+  .login_Header_Bar {
+    width: 100%;
+    background-color: #2e7bff;
+    padding: 15px 0px 15px 0px;
+    margin-bottom: 60px;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0px 4px 15px -0px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #ffffff;
+    font-size: 25px;
+    cursor: default;
+    transition: all 0.4s ease;
+  }
+  
+  .login_Header_Bar:hover {
+    background-color: #2e62ff;
+  }
+  
+  .loginInput {
+    width: 90% !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+  }
+  
+  .btnConfirm {
+    width: 90% !important;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
 
-#left {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 500px;
-    align-items: right;
-}
+  .anchortag{
+    font-size: 12px;
+    text-decoration: none;
+  }
+  .blue:link{
+    color: #2e62ff;
+  }
+  .black:link{
+    color: black;
+  }
+  .blue:visited{
+    color: #2e62ff;
+  }
+  .black:visited{
+    color: black;
+  }
 
-#right {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 500px;
-    text-align: left;
-}
-
-form{
-    text-align: center
- }
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
+  @media screen and (max-width: 960px) {
+    .loginRow {
+      flex-direction: column !important;
+    }
+  
+    .loginImage {
+      width: 75vw;
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-top: 60px;
+    }
+  
+    .loginForm {
+      margin-right: 0px;
+    }
+  }
+  

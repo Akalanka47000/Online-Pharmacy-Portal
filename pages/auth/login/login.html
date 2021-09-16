@@ -2,31 +2,59 @@
 <head>
 	<title>Login | Simple Meds</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="login.css">
-	<script src="login.js"></script>
-	<link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
-	<script async src="/Online-Pharmacy-Portal/pages/contactUs/contactUs.js"></script>
-    <link rel="stylesheet" href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css"/>
-    <script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
+  	<link rel="stylesheet" href="/Online-Pharmacy-Portal/pages/auth/login/login.css"/>
+  	<link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
+  	<script src="/Online-Pharmacy-Portal/pages/auth/login/login.js"></script>
+  	<link rel="stylesheet" href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css"/>
+  	<script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
+   	<meta name="viewport" content="width=device-width" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
 </head>
 <body>
 	<section>
 		<!-- Navbar -->
 		<?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
-		<div class="row">
-			<div class="column" id ="left">
-				<img src = "https://wallpapercave.com/wp/Tc5UfZq.jpg" width = "100%" >
-			</div>
-			<div class="column" id ="right">
-				<center><h2>Welcome</h2></center>
-				<form method ="POST">				
-					<input type = "email" name = "email" placeholder = "Email" pattern = "[a-z0-9._%+-]+@[a-z0-9._]+\.[a-z]{2,3}" required><br><br>
-					<input type = "password" id= "pwd" placeholder = "Password" pattern = "(?=.*\d)(?+.*[a-z](?=.*[A-Z]).{5,10}" required><br><br>
-					<a href = "gkjh" ></a>Forgot your password?</a><br>
-					<input type = "submit" id = "registered" value="Log In"><br/><br/>
-					<a href = "http://localhost:8080/Online-Pharmacy-Portal/pages/auth/register/register.html">Haven't signed up yet?</a><br>
-					<center><input type = "submit" id = "registered" value="Sign Up"></center>
+		<div class="row justify-center loginRow">
+			<img
+			  src="/Online-Pharmacy-Portal/assets/images/auth/Mobile login-rafiki.png"
+			  class="loginImage"
+			/>
+			<div class="column justify-center loginFormContainer">
+			 
+			  <form method="POST" class="loginForm column justify-center ">
+				<div class="login_Header_Bar">Welcome</div>
+				<input
+				  class="inputField loginInput"
+				  type="text"
+				  size="50"
+				  id="email"
+				  name="email"
+				  placeholder="Email"
+				  pattern = "[a-z0-9._%+-]+@[a-z0-9._]+\.[a-z]{2,3}"
+				  required
+				/>			
+				<input
+				  class="inputField loginInput"
+				  type="password"
+				  size="50"
+				  id="pwd"
+				  name="pwd"
+				  placeholder="Password"
+				  pattern = "[a-z0-9._%+-]+@[a-z0-9._]+\.[a-z]{2,3}"
+				  required
+				/>
+				<br/>
+				<button
+				type="submit"
+				class="button btnConfirm"
+			  >
+				Log In
+			  </button>
+			  	<a class = "anchortag black" href = "gkjh" >Forgot your password?</a><br>
+				
+				<a class = "anchortag blue" href = "http://localhost:8080/Online-Pharmacy-Portal/pages/auth/register/register.html">Haven't signed up yet?</a><br><br>
+				
 				</form>
 			</div>
 		  </div>
