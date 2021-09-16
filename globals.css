@@ -76,6 +76,8 @@ a {
   margin-right: 8px;
   text-align: center;
   border-radius: 5px;
+  outline: 0px !important;
+  border-style: none;
   cursor: pointer;
   font-weight: bold;
   transition: all 0.3s ease;
