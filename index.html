@@ -6,6 +6,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
+    <?php
+    require './config/initializeDB.php';?>
   </head>
   <body>
     <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/pages/home/"; include($PATH."home.html"); ?>
