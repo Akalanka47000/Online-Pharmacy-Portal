@@ -4,6 +4,11 @@
     <link rel="stylesheet" href="/Online-Pharmacy-Portal/pages/home/home.css" />
     <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
     <script src="/Online-Pharmacy-Portal/pages/home/home.js"></script>
+    <script src="/Online-Pharmacy-Portal/components/product/product.js"></script>
+    <link
+      rel="stylesheet"
+      href="/Online-Pharmacy-Portal/components/product/product.css"
+    />
     <link
       rel="stylesheet"
       href="/Online-Pharmacy-Portal/modules/chat/userChat/userChat.css"
@@ -46,10 +51,7 @@
           <div class="TSP_Header_Bar">
             <div class="TSP_Title blink">TOP SELLING</div>
           </div>
-          <div class="TSP row justify-between">
-            <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/home/topSellingProduct/"; include($PATH."topSellingProduct.html"); ?>
-            <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/home/topSellingProduct/"; include($PATH."topSellingProduct.html"); ?>
-          </div>
+          <div class="TSP row justify-between" id="TSP"></div>
         </div>
       </div>
       <div class="particleCanvas">
