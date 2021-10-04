@@ -83,7 +83,7 @@ const renderFAQ = () => {
 let chatModalOpen = false;
 const toggleChatModal = () => {
   chatModalOpen = !chatModalOpen;
-  const userRole = localStorage.getItem("UserRole");
+  const userRole = localStorage.getItem("userRole");
   if (userRole == "Admin") {
     renderAdminChatModal();
   } else {
