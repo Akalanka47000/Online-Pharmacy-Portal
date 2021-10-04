@@ -53,9 +53,8 @@ const encodeImage = (e) => {
         image.src = e.target.result;
         image.onload = () => {
           const imgBase64Path = e.target.result;
-          const img = imgBase64Path.split(",")[1];
           chats.push({
-            message: "base64EncodedImg/imageUrl"+img,
+            message: "base64EncodedImg/imageUrl"+imgBase64Path,
             userId: "123",
             username: "test username",
             time: Date.now(),
@@ -94,7 +93,7 @@ const renderChatList = () => {
       </div>
       <div class="w-full row ${chat.userId == userId ?"justify-end":"justify-start"}">
         <div class="chatTile ${chat.userId == userId ?"sendTile":"receiveTile"}" style="${chat.message.includes('base64EncodedImg/imageUrl')?'background-color:#FFFFFF !important; box-shadow:none !important':''}">
-          ${!chat.message.includes('base64EncodedImg/imageUrl')?chat.message:`<img src="data:image/jpeg;base64,${chat.message.replaceAll('base64EncodedImg/imageUrl','')}" class="chatMessageImage"/>`}
+          ${!chat.message.includes('base64EncodedImg/imageUrl')?chat.message:`<img src="${chat.message.replaceAll('base64EncodedImg/imageUrl','')}" class="chatMessageImage"/>`}
         </div>
       </div>  
       <div class="w-full row ${chat.userId == userId ?"justify-end":"justify-start"}" style="font-size:15px; margin-top:8px; ${chat.userId == userId ?"margin-right:30px;":"margin-left:30px;"}">

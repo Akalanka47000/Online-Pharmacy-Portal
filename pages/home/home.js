@@ -1,4 +1,4 @@
-let index = 0;
+let index = -1;
 function showSlides() {
   index++;
   document.getElementsByClassName(
@@ -12,23 +12,23 @@ function showSlides() {
 
 const FAQData = [
   {
-    title: "Lorem ipsum dolor sit amet",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat.",
+    title: "How long does a delivery normally take?",
+    body: "Between 30 minutes to 1 hour depending on your location and the availability of our staff",
   },
   {
-    title: "Nunc maximus, magna at ultricies elementum",
+    title: "Is it possible to cancel orders once placed?",
 
-    body: "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam, vitae convallis ex tortor sed dolor.",
+    body: "Yes it's possible",
   },
   {
-    title: "Curabitur laoreet, mauris vel blandit fringilla",
+    title: "Do we recieve a full refund on a cancelled order",
 
-    body: "Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncusnunc, ac sagittis leo elit vel lorem.",
+    body: "Almost, we will be deducting a minor fee if our delivery staff has already departed",
   },
   {
-    title: "risus turpis vulputate quam, vitae convallis.",
+    title: "Do you store our payment details?",
 
-    body: "current version is 1.2.1",
+    body: "No, we do not store anything related to that. Everything is discarded once processed",
   },
 ];
 
@@ -47,7 +47,7 @@ const toggleVisibility = (index) => {
 
 const renderFAQ = () => {
   const faqs = document.getElementById("faqs");
-  faqs.innerHTML='';
+  faqs.innerHTML = "";
   FAQData.forEach((faq, index) => {
     const QAComponent = `<div id="component${index}" class="w-full column QA_Content">
         <div
@@ -76,29 +76,48 @@ const renderFAQ = () => {
           </div>
         </div>
       </div>`;
-    faqs.insertAdjacentHTML('beforeend', QAComponent);
+    faqs.insertAdjacentHTML("beforeend", QAComponent);
   });
 };
 
 let chatModalOpen = false;
 const toggleChatModal = () => {
   chatModalOpen = !chatModalOpen;
-  const userRole=localStorage.getItem('UserRole');
-  if(userRole=="Admin"){
+  const userRole = localStorage.getItem("UserRole");
+  if (userRole == "Admin") {
     renderAdminChatModal();
-  }else{
+  } else {
     renderUserChatModal();
   }
+};
 
+const renderTopSellingProducts = () => {
+  var data = new FormData();
+  data.append("function", "getTopSellingProducts");
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      const products = JSON.parse(this.responseText);
+      const productElement = document.getElementById("TSP");
+      productElement.innerHTML = "";
+      products.forEach((product) => {
+        const productComponent = buildProduct(product);
+        productElement.insertAdjacentHTML("beforeend", productComponent);
+      });
+    }
+  };
+  xmlhttp.open("POST", "pages/home/home.php", true);
+  xmlhttp.send(data);
 };
 
 const initialize = () => {
   AOS.init({ offset: 0, duration: 1000 });
-  setTimeout(showSlides, 4000);
+  showSlides()
   particlesJS.load(
     "particles-js",
     "/Online-Pharmacy-Portal/assets/packages/particles/particles.json"
   );
+  renderTopSellingProducts();
   initVisibilities();
   renderFAQ();
 };

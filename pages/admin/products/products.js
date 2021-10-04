@@ -76,7 +76,6 @@ const clearFormData = () => {
 
 const handleSubmit = (e) => {
   e.preventDefault();
-
   var data = new FormData();
   if (modalPurpose == "add") {
     data.append("function", "addProduct");
@@ -167,15 +166,13 @@ const deleteProduct = (id) => {
 };
 
 const encodeImage = (e) => {
-  console.log(e);
   if (e && e[0]) {
     const reader = new FileReader();
     reader.onload = (e) => {
       const image = new Image();
       image.src = e.target.result;
       image.onload = () => {
-        const imgBase64Path = e.target.result;
-        headerImage = imgBase64Path.split(",")[1];
+        headerImage = e.target.result;
         renderModal();
       };
     };
@@ -223,11 +220,7 @@ const renderModal = () => {
         ${
           headerImage
             ? `<img
-                src=${
-                  headerImage.includes("https://firebasestorage.googleapis.com")
-                    ? headerImage
-                    : `data:image/jpeg;base64,${headerImage}`
-                }
+                src=${headerImage}
                 alt="headerImage"
                 class="w-full productFormImageDisplay"
               ></img>`
