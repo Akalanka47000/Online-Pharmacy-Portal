@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
+    <link
+      rel="stylesheet"
+      href="/Online-Pharmacy-Portal/pages/products/singleProduct/singleProduct.css"
+    />
+    <title>Single product</title>
+  </head>
+  <body>
+    <!-- MAIN -->
+
+    <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
+    <section>
+      <main class="main container">
+        <div class="product_row">
+          <!--  product -->
+          <div class="product">
+            <div class="product-figure"></div>
+            <div>
+              <img
+                class="product-img"
+                src="/Online-Pharmacy-Portal/assets/images/All product/300-tablets.png"
+                alt="product vitamin c"
+              />
+              <!-- <img class="product-img" src="./images/pic2.png" alt="" /> -->
+            </div>
+            <div class="dots">
+              <span class="dot dot-color-1 active"></span>
+              <span class="dot dot-color-2"></span>
+            </div>
+          </div>
+          <div class="info">
+            <!-- INFORMATION -->
+            <div class="product-info">
+              <h1 class="info-title">Natr's Way Vitamin-C 500mg</h1>
+              <p class="info-description">
+                   Supports Healthy Weight Management Supports Gut Health for
+                Healthy Digestion Supports a Healthy Immune System Helps to
+                Improve Energy Levels Amazing taste, 100% Vegan, Non-GMO and
+                Gluten Free Manufactured in the U.S.A
+              </p>
+            </div>
+            <div class="price">
+              <span class="price-title">$9.99</span>
+            </div>
+          
+          <!-- COUNT -->
+          <div class="count ">
+            <!-- <h3 class="count-title">Count</h3> -->
+            <div class="count-content button ">
+              <span>-</span>
+              <span>1</span>
+              <span>+</span>
+            </div>
+              <div class="add-to-cart" > <a href="" class="price-button button">ADD TO CART</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+    <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
+    <script src="index.js"></script>
+    
+  </body>
+</html>

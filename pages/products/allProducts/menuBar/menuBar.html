@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sidebar Menu with sub-menu | CodingNepal</title>
+    <link
+      rel="stylesheet"
+      href="/Online-Pharmacy-Portal/pages/products/allProducts/menuBar/menuBar.css"
+    />
+    <script src="/navbar.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+    <nav class="sidebar">
+      <div class="text">Simple Med</div>
+      <ul>
+        <li class="active">
+          <a href="#" class="Category_btn">Category</a>
+          <ul class="Category">
+            <li><a href="#">Cat1</a></li>
+            <li><a href="#">Cat2</a></li>
+            <li><a href="#">Cat2</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="Deals-btn" onclick="expanCatageory(this)"
+            >Deals & Pramotion
+          </a>
+          <ul class="Deals" id="Deal">
+            <li><a href="#">Deals</a></li>
+            <li><a href="#">Pramotion</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="Brand-btn">Brand </a>
+          <ul class="Brand">
+            <li><a href="#">Brand 1</a></li>
+            <li><a href="#">Brand 2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>
