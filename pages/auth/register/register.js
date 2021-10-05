@@ -33,8 +33,21 @@ const handleSubmit = (e) => {
         if (result.success == true) {
           window.localStorage.setItem("loggedIn", "true");
           window.localStorage.setItem("userRole", "User");
-		  window.localStorage.setItem("email", e.target.email.value);
-          window.location.href = "/Online-Pharmacy-Portal/index.html";
+          window.localStorage.setItem("email", e.target.email.value);
+          let timerInterval;
+          Swal.fire({
+            icon: "success",
+            heightAuto: false,
+            background: "#f5fdff",
+            title: `<div style="font-size:23px">Account created Successfully</div>`,
+            showConfirmButton: false,
+            timer: 1500,
+            willClose: () => {
+              clearInterval(timerInterval);
+            },
+          }).then(() => {
+            window.location.href = "/Online-Pharmacy-Portal/index.html";
+          });
         } else {
           let errorMessage;
           if (result.message.includes("Duplicate entry")) {
