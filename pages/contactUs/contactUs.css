@@ -108,4 +108,49 @@
 }
 
 @media screen and (max-width: 960px) {
+  .openingRow {
+    flex-direction: column !important;
+  }
+  .orderRow {
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .contactCard {
+    width: 40vw;
+    height: 39vw;
+    text-align: center;
+    background-color: #333333;
+    padding: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 3px 15px -0px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    font-size: 20px;
+    cursor: default;
+  }
+  .cont_card{
+    flex-direction: column !important;
+
+  }
+  .googleMap {
+    width: 50vw;
+    height: 55vh;
+    border-radius: 10px;
+    margin-left: 170px;
+    margin-right: 160px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 3px 15px -0px rgba(0, 0, 0, 0.1);
+  }
+  .contactForm {
+    width: 55%;
+    margin-top: 30px;
+    margin-left: 90px;
+    margin-right: 75px;
+  }
+  
 }
+

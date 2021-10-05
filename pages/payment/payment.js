@@ -17,24 +17,46 @@ const handlePaymentSubmit = (e) => {
       owner: e.target.owner.value,
       paymentMethod: selectedPaymentMethod,
     };
-    console.log(formData);
-    clearForm();
-    Swal.fire({
-      icon: "success",
-      heightAuto: false,
-      background: "#f5fdff",
-      title: `<div style="font-size:23px">Sucesss!</div>`,
-      showConfirmButton: false,
-      timer: 1500,
-    });
-  }
-};
 
-const clearForm = () => {
-  const form = document.getElementById("paymentForm");
-  form.reset();
-  selectedPaymentMethod = "";
-  renderPaymentMethods();
+    console.log(formData);
+    const email = window.localStorage.getItem("email");
+    var data = new FormData();
+    data.append("function", "processPayment");
+    data.append("email", email);
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        const result = JSON.parse(this.responseText)
+        if (result.success == true) {
+          let timerInterval;
+          Swal.fire({
+            icon: "success",
+            heightAuto: false,
+            background: "#f5fdff",
+            title: `<div style="font-size:23px">${result.message}</div>`,
+            showConfirmButton: false,
+            timer: 1500,
+            willClose: () => {
+              clearInterval(timerInterval);
+            },
+          }).then(() => {
+            window.location.href = "/Online-Pharmacy-Portal/pages/orders/orders.html";
+          });
+        } else {
+          Swal.fire({
+            icon: "warning",
+            heightAuto: false,
+            background: "#f5fdff",
+            title: `<div style="font-size:23px">${result.message}</div>`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      }
+    };
+    xmlhttp.open("POST", "payment.php", true);
+    xmlhttp.send(data);
+  }
 };
 
 const submitPaymentForm = () => {

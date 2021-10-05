@@ -28,6 +28,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, minimum-scale=1"
     />
+   
   </head>
 
   <body>
@@ -35,12 +36,16 @@
       <!-- Navbar -->
       <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
       <div class="column">
-        <div class="careerHeaderBar">Our Careers</div>
-
+        <div class="careerHeaderBar " data-aos="fade-right">
+          <div class = "blink pageHeading">
+            Our Careers
+          </div>
+        </div>   
+        
         <div class="row justify-center w-full openingRow">
-          <div class="img row justify-center">
-            <img
-              src="/Online-Pharmacy-Portal/assets/images/careers/pharmacist.svg"
+          <div class="img row justify-center"  id= "CAV">
+            <img class = "career_img" data-aos="fade-right"
+              src="/Online-Pharmacy-Portal/assets/images/careers/Pharmacist.png"
             />
 
             <div class="careerPopup">
@@ -49,9 +54,9 @@
             </div>
           </div>
 
-          <div class="img">
-            <img
-              src="/Online-Pharmacy-Portal/assets/images/careers/deliverer.svg"
+          <div class="img row justify-center">
+            <img class = "career_img" data-aos="fade-up"
+              src="/Online-Pharmacy-Portal/assets/images/careers/Cashier.png"
             />
 
             <div class="careerPopup">
@@ -60,9 +65,9 @@
             </div>
           </div>
 
-          <div class="img">
-            <img
-              src="/Online-Pharmacy-Portal/assets/images/careers/cashier.svg"
+          <div class="img row justify-center">
+            <img class = "career_img" data-aos="fade-left"
+              src="/Online-Pharmacy-Portal/assets/images/careers/DeliveryPerson.png"
             />
 
             <div class="careerPopup">
@@ -82,7 +87,7 @@
               width: auto;
               padding-left: 50px;
               padding-right: 50px;
-			  margin-top: 20px;
+			        margin-top: 20px;
               margin-bottom: 50px;
             "
           >
