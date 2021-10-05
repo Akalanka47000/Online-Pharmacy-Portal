@@ -7,13 +7,10 @@ const handleSubmit = (e) => {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-        console.log(this.responseText)
       const result = JSON.parse(this.responseText);
-      
-      console.log(result)
       if (result.success == true) {
         window.localStorage.setItem("loggedIn", "true");
-        window.localStorage.setItem("userRole", "User");
+        window.localStorage.setItem("userRole", result.userRole);
         window.localStorage.setItem("email", e.target.email.value);
         let timerInterval;
         Swal.fire({
@@ -27,7 +24,7 @@ const handleSubmit = (e) => {
             clearInterval(timerInterval);
           },
         }).then(() => {
-            window.location.href = "/Online-Pharmacy-Portal/index.html";
+          window.location.href = "/Online-Pharmacy-Portal/index.html";
         });
       } else {
         Swal.fire({
