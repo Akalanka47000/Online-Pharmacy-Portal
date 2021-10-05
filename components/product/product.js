@@ -1,3 +1,9 @@
+const setSelectedProduct = (productId) => {
+  window.localStorage.setItem("selectedProductID", productId);
+  window.location.href =
+    "/Online-Pharmacy-Portal/pages/products/singleProduct/singleProduct.html";
+};
+
 const buildProduct = (product) => {
   return `<div class="column TSP_Content">
     <img src="${product.productImage}" class="TSP_Img" />
@@ -9,6 +15,7 @@ const buildProduct = (product) => {
       <div
         class="button btnViewTSP_Details"
         style="margin-right: 0px; padding-left: 50px; padding-right: 50px"
+        onClick="setSelectedProduct('${product.productID}')"
       >
         View
       </div>

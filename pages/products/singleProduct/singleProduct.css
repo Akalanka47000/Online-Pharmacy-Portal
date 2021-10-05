@@ -1,14 +1,5 @@
 html {
-  font-size: 62.5%;
   box-sizing: border-box;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: black;
-  background-color: white;
 }
 
 ul,
@@ -19,21 +10,6 @@ li {
 a {
   text-decoration: none;
   color: inherit;
-}
-
-img {
-  max-width: 100%;
-}
-
-.container {
-  max-width: 114rem;
-  margin: 0 auto;
-}
-
-@media only screen and (max-width: 1200px) {
-  .container {
-    padding: 0 3rem;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -54,8 +30,13 @@ img {
   }
 }
 
+.container {
+  min-height: 85vh;
+}
+
 /* product */
 .product_row {
+  width: 80%;
   height: auto;
   display: grid;
   grid-template-columns: 1.3fr 1fr;
@@ -75,77 +56,33 @@ img {
 
 .product-figure {
   position: relative;
-  width: 37rem;
-  height: 37rem;
+  width: 32vw;
+  height: 32vw;
   background-color: #2e7bff;
   border-radius: 50%;
   transition: 500ms linear;
-}
-
-.product-figure::before {
-  content: "";
-  position: absolute;
-  top: 7%;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 85%;
-  height: 85%;
-  background-color: white;
-  border-radius: 50%;
+  z-index: 0;
 }
 
 .product-img {
-  width: 25rem;
-  height: 20rem;
-  position: absolute;
-  top: 30%;
-  left: 10%;
-  right: 10%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.dots {
   position: absolute;
   left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  display: flex;
-}
-
-.dot {
-  display: block;
-  width: 1rem;
-  height: 1rem;
+  transform: translate(-50%, 0);
+  width: 28vw;
+  height: 28vw;
   border-radius: 50%;
-  margin-bottom: 0.5rem;
-  cursor: pointer;
-}
-
-.dot:not(:last-child) {
-  margin-right: 0.7rem;
-}
-
-.dot-color-1 {
-  background-color: #2e7bff;
-}
-
-.dot-color-2 {
-  background-color: black;
-}
-
-.dot.active {
-  border: 1px solid white;
-  box-shadow: 0 0 2px #2e7bff(0, 0, 0, 0.1);
+  z-index: 1;
+  object-fit: cover;
+  transition: 500ms linear;
 }
 
 .info-subtitle {
   font-weight: 500;
-  font-size: 2.2rem;
+  font-size: 3.2rem;
 }
 
 .info-title {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
   line-height: 1.3;
@@ -153,6 +90,7 @@ img {
 
 .info-description {
   margin-bottom: 2rem;
+  font-size: 18px;
 }
 
 .info {
@@ -223,21 +161,78 @@ img {
 
 .price-title {
   font-weight: 500;
-  font-size: 3rem;
+  font-size: 2.1rem;
 }
 
 .price-button {
+  width: 30%;
   background-color: #2e7bff;
   color: white;
   border-radius: 0.5rem;
-  padding: 1.3rem 5rem;
+  margin-left: 0px !important;
+  margin-top: 30px;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+  font-size: 19px;
 }
 
-@media only screen and (max-width: 840px) {
+@media only screen and (max-width: 1260px) {
+  .product-figure {
+    width: 38vw;
+    height: 38vw;
+  }
+
+  .product-img {
+    width: 33vw;
+    height: 33vw;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .product-figure {
+    width: 50vw;
+    height: 50vw;
+  }
+
+  .product-img {
+    width: 43vw;
+    height: 43vw;
+  }
+
   .product_row {
+    width: 90%;
     grid-template-columns: 1fr;
-    margin-top: 8rem;
+    margin-right: 0vw;
     overflow: visible;
+  }
+
+  .product-info {
+    align-items: center !important;
+  }
+
+  .info {
+    margin-left: 0%;
+  }
+
+  .info-title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .info-description {
+    text-align: center;
+  }
+
+  .price-title {
+    font-size: 2.1rem;
+  }
+
+  .price-button {
+    width: 70%;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    margin-bottom: 60px;
+    font-size: 18px;
   }
 }
 
@@ -247,14 +242,13 @@ img {
   }
 
   .product-figure {
-    width: 27rem;
-    height: 27rem;
+    width: 85vw;
+    height: 85vw;
   }
 
   .product-img {
-    width: 21rem;
-    height: 17rem;
-    top: 25%;
+    width: 75vw;
+    height: 75vw;
   }
 
   .info-subtitle {
@@ -262,14 +256,14 @@ img {
   }
 
   .info-title {
-    font-size: 3rem;
+    font-size: 2.4rem;
     margin-bottom: 0.5rem;
   }
 
   .info-description {
     line-height: 1.2;
-    font-size: 1.5rem;
     margin-bottom: 1rem;
+    font-size: 17px;
   }
 
   .price {
@@ -280,5 +274,9 @@ img {
     box-shadow: 0 5px 15px #2e7bff(0, 0, 0, 0.5);
     width: 100%;
     padding: 2rem 2rem 0 2rem;
+  }
+
+  .price-title {
+    font-size: 2rem;
   }
 }

@@ -17,9 +17,7 @@
   z-index: 100;
   overflow-y: auto;
 }
-.btnNav {
-  width: 160px !important;
-}
+
 .navbarClosed {
   transform: translateX(-100vw);
   opacity: 0;

@@ -4,141 +4,43 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
     <link
       rel="stylesheet"
       href="/Online-Pharmacy-Portal/pages/products/allProducts/allProducts.css"
     />
-    <link rel="stylesheet" href="/pages/products/allProducts/allProducts.css" />
-
-    <script
-      src="https://kit.fontawesome.com/263a7573a7.js"
-      crossorigin="anonymous"
-    ></script>
+    <link
+      rel="stylesheet"
+      href="/Online-Pharmacy-Portal/components/product/product.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css"
+    />
+    <script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
     <script src="/Online-Pharmacy-Portal/pages/products/allProducts/allProducts.js"></script>
-    <title>Document</title>
+    <script src="/Online-Pharmacy-Portal/components/product/product.js"></script>
+    <title>Browse | Simple Meds</title>
   </head>
   <body>
     <section>
       <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
-      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/pages/products/allProducts/menuBar/"; include($PATH."menuBar.html"); ?>
-
-      <div class="srch-box">
-        <li>
-          <input class="srch-txt" type="text" placeholder="Search" />
-          <button class="srch-btn" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </li>
-      </div>
-      <div class="Category">
-        <div class="box itm1" id="product1">
-          <img src="/assets/images/All product/demo1.jpg" alt="" />
-          <button class="buy_now button" type="submit">
-            Buy Now <i class="fas fa-shopping-basket"></i>
-          </button>
-          <button class="add to cart button" type="submit">
-            ADD to Cart <i class="fas fa-shopping-cart"></i>
-          </button>
-        </div>
-        <div class="box itm2">
-          <img src="/assets/images/All product/demo2.jpg" alt="" />
-          <button class="buy_now button" type="submit">
-            Buy Now <i class="fas fa-shopping-basket"></i>
-          </button>
-          <button class="add to cart button" type="submit">
-            ADD to Cart <i class="fas fa-shopping-cart"></i>
-          </button>
-        </div>
-        <div class="box itm3">
-          <img src="/assets/images/All product/demo3.jpg" alt="" />
-          <button class="buy_now button" type="submit">
-            Buy Now <i class="fas fa-shopping-basket"></i>
-          </button>
-          <button class="add to cart button" type="submit">
-            ADD to Cart <i class="fas fa-shopping-cart"></i>
-          </button>
-        </div>
-        <div class="box itm4">
-          <img src="/assets/images/All product/demo4.jpg" alt="" />
-          <button class="buy_now button" type="submit">
-            Buy Now <i class="fas fa-shopping-basket"></i>
-          </button>
-          <button class="add to cart button" type="submit">
-            ADD to Cart <i class="fas fa-shopping-cart"></i>
-          </button>
-        </div>
-        <div class="box itm5">
-          <img src="/assets/images/All product/demo5.jpg" alt="" />
-          <button class="buy_now button" type="submit">
-            Buy Now <i class="fas fa-shopping-basket"></i>
-          </button>
-          <button class="add to cart button" type="submit">
-            ADD to Cart <i class="fas fa-shopping-cart"></i>
-          </button>
-        </div>
-        <div class="box itm6">
-          <img src="/assets/images/All product/demo6.jpg" alt="" />
-          <button class="buy_now button" type="submit">
-            Buy Now <i class="fas fa-shopping-basket"></i>
-          </button>
-          <button class="add to cart button" type="submit">
-            ADD to Cart <i class="fas fa-shopping-cart"></i>
-          </button>
-        </div>
-        <div class="box itm7">
-          <img src="/assets/images/All product/demo7.jpg" alt="" />
-          <button class="buy_now button" type="submit">
-            Buy Now <i class="fas fa-shopping-basket"></i>
-          </button>
-          <button class="add to cart button" type="submit">
-            ADD to Cart <i class="fas fa-shopping-cart"></i>
-          </button>
-        </div>
-        <div class="box itm8">
-          <img src="/assets/images/All product/demo8.jpg" alt="" />
-          <button class="buy_now button" type="submit">
-            Buy Now <i class="fas fa-shopping-basket"></i>
-          </button>
-          <button class="add to cart button" type="submit">
-            ADD to Cart <i class="fas fa-shopping-cart"></i>
-          </button>
-        </div>
-        <div class="box itm9">
-          <img src="/assets/images/All product/demo9.jpg" alt="" />
-          <button class="buy_now button" type="submit">
-            Buy Now <i class="fas fa-shopping-basket"></i>
-          </button>
-          <button class="add to cart button" type="submit">
-            ADD to Cart <i class="fas fa-shopping-cart"></i>
-          </button>
-        </div>
-        <div class="box itm10">
-          <img src="/assets/images/All product/demo10.jpg" alt="" />
-          <button class="buy_now button" type="submit">
-            Buy Now <i class="fas fa-shopping-basket"></i>
-          </button>
-          <button class="add to cart button" type="submit">
-            ADD to Cart <i class="fas fa-shopping-cart"></i>
-          </button>
-        </div>
-        <div class="box itm11">
-          <img src="/assets/images/All product/demo11.jpg" alt="" />
-          <button class="buy_now button" type="submit">
-            Buy Now <i class="fas fa-shopping-basket"></i>
-          </button>
-          <button class="add to cart button" type="submit">
-            ADD to Cart <i class="fas fa-shopping-cart"></i>
-          </button>
-        </div>
-        <div class="box itm12">
-          <img src="/assets/images/All product/demo12.jpg" alt="" />
-          <button class="buy_now button" type="submit">
-            Buy Now <i class="fas fa-shopping-basket"></i>
-          </button>
-          <button class="add to cart button" type="submit">
-            ADD to Cart <i class="fas fa-shopping-cart"></i>
-          </button>
+      <div class="row parentContainer">
+        <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/pages/products/allProducts/menuBar/"; include($PATH."menuBar.html"); ?>
+        <div class="column justify-center productPageBody">
+          <div class="w-full row justify-center srch-box">
+            <input
+              class="srch-input "
+              type="text"
+              placeholder="Enter a product name"
+            />
+            <div class="button btnSrch">Search</div>
+          </div>
+          <div class="row justify-center allProducts" id="productList"></div>
         </div>
       </div>
 

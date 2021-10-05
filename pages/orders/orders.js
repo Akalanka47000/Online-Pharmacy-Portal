@@ -9,7 +9,7 @@ const getActiveOrders = () => {
 };
 
 const renderOrders = (orderType) => {
-  const email = localStorage.getItem("Email");
+  const email = localStorage.getItem("email");
   var data = new FormData();
   data.append("function", orderType=='active'?"getActiveOrders":"getCompletedOrders");
   data.append("email", email);
