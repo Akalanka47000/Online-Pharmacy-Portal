@@ -1,0 +1,156 @@
+.cont {
+  background-color: #2e7bff;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 50px;
+  padding: 30px;
+  box-shadow: 0px 3px 15px -0px rgba(0, 0, 0, 0.2);
+}
+
+.pageHeading {
+  font-size: 30px;
+}
+
+.normalTxt {
+  font-size: 16px;
+}
+
+.form {
+  text-align: right;
+}
+
+.thinBar {
+  position: absolute;
+  top: 50%;
+  height: 7px;
+  width: 100%;
+  background-color: #2e7bff;
+  transition: all 0.3s ease;
+  box-shadow: 0px 3px 15px -0px rgba(0, 0, 0, 0.2);
+}
+
+.contactCard {
+  width: 13vw;
+  height: 10vw;
+  text-align: center;
+  background-color: #333333;
+  padding: 15px;
+  margin-left: 30px;
+  margin-right: 30px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0px 3px 15px -0px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  font-size: 20px;
+  cursor: default;
+}
+
+.contactCard:hover {
+  background-color: #292929;
+  box-shadow: 0px 5px 15px -0px rgba(0, 0, 0, 0.3);
+  transform: scale(1.025, 1.025);
+}
+
+.googleIcon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.txt_block {
+  float: left;
+}
+
+.googleMap {
+  width: 40vw;
+  height: 60vh;
+  border-radius: 10px;
+  margin-left: 100px;
+  margin-right: 160px;
+  transition: all 0.3s ease;
+  box-shadow: 0px 3px 15px -0px rgba(0, 0, 0, 0.1);
+}
+
+.googleMap:hover {
+  transform: scale(1.025, 1.025);
+}
+
+.contactForm {
+  width: 55%;
+  margin-right: 100px;
+}
+
+.btnSend {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  margin-top: 20px !important;
+  margin-bottom: 50px !important;
+  border-style: none !important;
+  padding: 14px !important;
+  font-family: Roboto !important;
+  font-weight: 600 !important;
+  font-size: 15px;
+}
+
+.contactBottomBar {
+  background-color: #292929 !important;
+  transition: all 0.3s ease;
+}
+
+.contactBottomBar:hover {
+  background-color: #292929 !important;
+}
+
+.addressTxt {
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 960px) {
+  .openingRow {
+    flex-direction: column !important;
+  }
+  .orderRow {
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .contactCard {
+    width: 40vw;
+    height: 39vw;
+    text-align: center;
+    background-color: #333333;
+    padding: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 3px 15px -0px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    font-size: 20px;
+    cursor: default;
+  }
+  .cont_card{
+    flex-direction: column !important;
+
+  }
+  .googleMap {
+    width: 50vw;
+    height: 55vh;
+    border-radius: 10px;
+    margin-left: 170px;
+    margin-right: 160px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 3px 15px -0px rgba(0, 0, 0, 0.1);
+  }
+  .contactForm {
+    width: 55%;
+    margin-top: 30px;
+    margin-left: 90px;
+    margin-right: 75px;
+  }
+  
+}
+

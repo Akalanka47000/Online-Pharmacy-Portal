@@ -21,8 +21,7 @@ const navigate = () => {
 };
 
 const renderCartItems = () => {
-  localStorage.setItem("Email", "akalankaperera128@gmail.com");
-  const email = localStorage.getItem("Email");
+  const email = localStorage.getItem("email");
   var data = new FormData();
   data.append("function", "getCartItems");
   data.append("email", email);

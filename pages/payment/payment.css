@@ -88,7 +88,7 @@
   font-size: 15px;
 }
 
-@media screen and (max-width: 1260px) {
+@media screen and (max-width: 1160px) {
   .paymentRow {
     flex-direction: column !important;
   }
