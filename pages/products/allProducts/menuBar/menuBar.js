@@ -7,10 +7,16 @@ const toggleFilters = () => {
 
 const renderFilters = () => {
   const filtersColumn = document.getElementById("filtersColumn");
+  const filterText = document.getElementById("showFilterText");
+
   if (showFilters) {
     filtersColumn.style.display = "flex";
+    filterText.innerHTML = "Hide filters";
   } else {
-    filtersColumn.style.display = "none";
+    filterText.innerHTML = "Click to show Filters";
+    if (window.matchMedia("(max-width:960px)").matches) {
+      filtersColumn.style.display = "none";
+    }
   }
 };
 
