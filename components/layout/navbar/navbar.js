@@ -33,12 +33,18 @@ const renderNavbarButtons = () => {
     loginMobile.innerHTML =
       "<a href='/Online-Pharmacy-Portal/pages/auth/login/login.html'><div class='button btnMobile' >Log In</div></a>";
   }
-  if (userRole == "Admin" || userRole == "Pharmacist") {
+  if (userRole == "Admin") {
     management.innerHTML =
       '<a href="/Online-Pharmacy-Portal/pages/admin/users/users.html"> <div class="button btnNav">Management</div></a>';
 
     managementMobile.innerHTML =
       '<a href="/Online-Pharmacy-Portal/pages/admin/users/users.html"> <div class="button btnMobile">Management</div></a>';
+  } else if (userRole == "Pharmacist") {
+    management.innerHTML =
+      '<a href="/Online-Pharmacy-Portal/pages/admin/products/products.html"> <div class="button btnNav">Management</div></a>';
+
+    managementMobile.innerHTML =
+      '<a href="/Online-Pharmacy-Portal/pages/admin/products/products.html"> <div class="button btnMobile">Management</div></a>';
   }
 };
 

@@ -5,10 +5,28 @@
 
     if($function =="processPayment"){
         $email=$_POST["email"];
-        $sql = "UPDATE Orders set orderStatus = 'Active' WHERE email = '$email'";
-        $result='';
+
+        $sqlSelect = "SELECT * FROM Orders WHERE email = '$email' AND orderStatus='InCart'";
+
+        $queryResult = $conn->query($sqlSelect);
+
+        $success = TRUE;
+        if ($queryResult->num_rows > 0) {
+            while($row = $queryResult->fetch_assoc()) {
+                $productID=$row["productID"];
+                $sql1 = "UPDATE Products set itemsSold = itemsSold+1 WHERE productID = '$productID'";
+                $sql2 = "UPDATE Products set availableStocks = availableStocks-1 WHERE productID = '$productID'";
+                if ($conn->query($sql1) !== TRUE ||$conn->query($sql2) !== TRUE ) {
+                    $success=FALSE;
+                }
+            }
+        }
+
+        $sql = "UPDATE Orders set orderStatus = 'Active' WHERE email = '$email' AND orderStatus='InCart'";
         
-        if ($conn->query($sql) === TRUE) {
+        $result='';
+
+        if ($conn->query($sql) === TRUE && $success === TRUE) {
             $result="{\"success\":true,\"message\":\"Payment processed successfully\"}";
         } else {
             $result="{\"success\":false,\"message\":\"Payment rejected\"}";

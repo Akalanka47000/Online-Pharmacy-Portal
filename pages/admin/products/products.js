@@ -418,9 +418,21 @@ const renderOrderList = () => {
   xmlhttp.send(data);
 };
 
+const renderManagementTabs = () => {
+  const managementTabs = document.getElementById("managementTabRow");
+  const userRole = window.localStorage.getItem("userRole");
+  if (userRole == "Admin") {
+    managementTabs.innerHTML = `<a href="/Online-Pharmacy-Portal/pages/admin/users/users.html" class="managementTab userTab" data-aos="fade-right">User Management</a>
+    <a href="/Online-Pharmacy-Portal/pages/admin/products/products.html" class="managementTab productTab" data-aos="fade-left"> Product Management</a>`;
+  } else {
+    managementTabs.innerHTML = `<div class="managementTab productTab" style="width:100%;" data-aos="fade-left"> Product Management</div>`;
+  }
+};
+
 const initialize = () => {
   AOS.init({ offset: 0, duration: 1000 });
   setSelectedOrderTab("active");
+  renderManagementTabs();
   renderProductList();
   renderOrderList();
   renderModal();

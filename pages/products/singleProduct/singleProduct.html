@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
+    <link
+      rel="stylesheet"
+      href="/Online-Pharmacy-Portal/pages/products/singleProduct/singleProduct.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css"
+    />
+    <script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
+    <script src="/Online-Pharmacy-Portal/assets/packages/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="/Online-Pharmacy-Portal/pages/products/singleProduct/singleProduct.js"></script>
+    <title>Product | Simple Meds</title>
+  </head>
+
+  <body>
+    <section>
+      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
+      <main
+        class="main container row justify-center"
+        id="productContainer"
+      ></main>
+      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
+    </section>
+  </body>
+</html>

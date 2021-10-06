@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sidebar Menu with sub-menu | CodingNepal</title>
+    <link
+      rel="stylesheet"
+      href="/Online-Pharmacy-Portal/pages/products/allProducts/menuBar/menuBar.css"
+    />
+    <script src="/Online-Pharmacy-Portal/pages/products/allProducts/menuBar/menuBar.js"></script>
+  </head>
+  <body>
+    <nav class="column justify-start sidebar">
+      <div class="text">Filters</div>
+      <div
+        class="showFilterText"
+        onClick="toggleFilters()"
+        id="showFilterText"
+      >
+        Click to show Filters
+      </div>
+      <div class="w-full column" id="filtersColumn">
+        <div class="w-full column">
+          <div class="w-full category_title">Category</div>
+          <div id="categories"></div>
+        </div>
+        <div class="w-full column">
+          <div class="w-full category_title">Brand</div>
+          <div id="brands"></div>
+        </div>
+      </div>
+    </nav>
+  </body>
+</html>

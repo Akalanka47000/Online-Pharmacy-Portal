@@ -61,6 +61,14 @@ a {
   justify-content: flex-end;
 }
 
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
 .w-full {
   width: 100%;
 }
