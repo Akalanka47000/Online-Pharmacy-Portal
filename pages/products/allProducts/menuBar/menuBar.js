@@ -7,11 +7,13 @@ let selectedBrandFilter = "All";
 const setSelectedCategoryFilter = (filterOption) => {
   selectedCategoryFilter = filterOption;
   renderCategoryItems();
+  renderAllProducts();
 };
 
 const setSelectedBrandFilter = (filterOption) => {
   selectedBrandFilter = filterOption;
   renderBrandItems();
+  renderAllProducts();
 };
 
 const renderCategoryItems = () => {

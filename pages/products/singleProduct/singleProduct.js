@@ -1,40 +1,51 @@
 const addToCart = (productID) => {
   const email = window.localStorage.getItem("email");
-  var data = new FormData();
-  data.append("function", "addToCart");
-  data.append("email", email);
-  data.append("productID", productID);
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      const result = JSON.parse(this.responseText);
-      if (result.success == true) {
-        let timerInterval;
-        Swal.fire({
-          icon: "success",
-          heightAuto: false,
-          background: "#f5fdff",
-          title: `<div style="font-size:23px">${result.message}</div>`,
-          showConfirmButton: false,
-          timer: 1500,
-          willClose: () => {
-            clearInterval(timerInterval);
-          },
-        });
-      } else {
-        Swal.fire({
-          icon: "warning",
-          heightAuto: false,
-          background: "#f5fdff",
-          title: `<div style="font-size:23px">${result.message}</div>`,
-          showConfirmButton: false,
-          timer: 1500,
-        });
+  if (email) {
+    var data = new FormData();
+    data.append("function", "addToCart");
+    data.append("email", email);
+    data.append("productID", productID);
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        const result = JSON.parse(this.responseText);
+        if (result.success == true) {
+          let timerInterval;
+          Swal.fire({
+            icon: "success",
+            heightAuto: false,
+            background: "#f5fdff",
+            title: `<div style="font-size:23px">${result.message}</div>`,
+            showConfirmButton: false,
+            timer: 1500,
+            willClose: () => {
+              clearInterval(timerInterval);
+            },
+          });
+        } else {
+          Swal.fire({
+            icon: "warning",
+            heightAuto: false,
+            background: "#f5fdff",
+            title: `<div style="font-size:23px">${result.message}</div>`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
       }
-    }
-  };
-  xmlhttp.open("POST", "singleProduct.php", true);
-  xmlhttp.send(data);
+    };
+    xmlhttp.open("POST", "singleProduct.php", true);
+    xmlhttp.send(data);
+  } else {
+    Swal.fire({
+      icon: "warning",
+      heightAuto: false,
+      background: "#f5fdff",
+      title: `<div style="font-size:23px">You need to be logged in to continue</div>`,
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  }
 };
 
 const renderProduct = () => {
@@ -46,7 +57,7 @@ const renderProduct = () => {
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       const products = JSON.parse(this.responseText);
-      document.title=`${products[0].productName} | Simple Meds`;
+      document.title = `${products[0].productName} | Simple Meds`;
       const productElement = document.getElementById("productContainer");
       productElement.innerHTML = "";
       const productComponent = `<div class="product_row">

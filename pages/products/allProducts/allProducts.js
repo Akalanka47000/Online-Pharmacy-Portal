@@ -1,6 +1,7 @@
 const renderAllProducts = () => {
   var data = new FormData();
   data.append("function", "getAllProducts");
+  data.append("categoryFilter", selectedCategoryFilter);
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
