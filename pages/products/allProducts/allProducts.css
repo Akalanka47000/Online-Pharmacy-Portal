@@ -14,17 +14,37 @@
 
 .srch-input {
   width: 63% !important;
-  margin-right:20px;
+  margin-right: 20px;
   outline: 3px solid #2e7bff !important;
   border-radius: 5px;
   box-shadow: 0px 4px 15px -0px rgba(0, 0, 0, 0.1);
-  border-style:none;
+  border-style: none;
   padding: 15px 30px 15px 30px;
 }
-.btnSrch{
-  padding-left:80px !important;
-  padding-right:80px !important;
-  padding-top:16px !important;
-  padding-bottom:16px !important;
-  border-radius:0px !important;
+.btnSrch {
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+
+@media screen and (max-width: 960px) {
+  .allProductMainrow {
+    flex-direction: column !important;
+  }
+  .productPageBody {
+    width: 100vw;
+  }
+  .srch-box {
+    flex-direction: column !important;
+  }
+  .srch-input {
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+  .btnSrch {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    width: 80vw !important;
+  }
 }

@@ -14,8 +14,9 @@
         if ($queryResult->num_rows > 0) {
             while($row = $queryResult->fetch_assoc()) {
                 $productID=$row["productID"];
-                $sql = "UPDATE Products set itemsSold = itemsSold+1 WHERE productID = '$productID'";
-                if ($conn->query($sql) !== TRUE) {
+                $sql1 = "UPDATE Products set itemsSold = itemsSold+1 WHERE productID = '$productID'";
+                $sql2 = "UPDATE Products set availableStocks = availableStocks-1 WHERE productID = '$productID'";
+                if ($conn->query($sql1) !== TRUE ||$conn->query($sql2) !== TRUE ) {
                     $success=FALSE;
                 }
             }
