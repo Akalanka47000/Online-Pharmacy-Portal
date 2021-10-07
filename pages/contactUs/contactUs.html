@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     <script src="/Online-Pharmacy-Portal/pages/contactUs/contactUs.js"></script>
+    <script src="/Online-Pharmacy-Portal/components/loadingOverlay/loadingOverlay.js"></script>
     <link rel="stylesheet" href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css" />
     <script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
     <script src="/Online-Pharmacy-Portal/assets/packages/sweetalert2/sweetalert2.all.min.js"></script>
@@ -22,6 +23,8 @@
 
 <body>
     <section>
+        <!-- Overlay -->
+        <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/loadingOverlay/"; include($PATH."loadingOverlay.html");?>
         <!-- Navbar -->
         <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
         <div class="column">

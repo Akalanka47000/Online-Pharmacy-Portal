@@ -14,6 +14,7 @@
       async
       src="/Online-Pharmacy-Portal/pages/admin/users/users.js"
     ></script>
+    <script src="/Online-Pharmacy-Portal/components/loadingOverlay/loadingOverlay.js"></script>
     <link
       rel="stylesheet"
       href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css"
@@ -29,6 +30,8 @@
 
   <body>
     <section>
+      <!-- Overlay -->
+      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/loadingOverlay/"; include($PATH."loadingOverlay.html");?>
       <!-- Navbar -->
       <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
       <div class="column">
@@ -67,19 +70,29 @@
         <div data-aos="fade-right">
           <div class="Admin_Header_Bar">USERS</div>
         </div>
-        <div class="column justify-center userListHeadings" data-aos="fade-left">
+        <div
+          class="column justify-center userListHeadings"
+          data-aos="fade-left"
+        >
           <div class="row userTableHeading">
-            <div class="tableCell emailCell row justify-start headingCell">User Email</div>
-            <div class="tableCell usernameCell row justify-start headingCell"> Username</div>
-            <div class="tableCell userRoleCell row justify-start headingCell">User Role</div>
-            <div class="tableCell deleteCell row justify-start headingCell">Delete</div>
+            <div class="tableCell emailCell row justify-start headingCell">
+              User Email
+            </div>
+            <div class="tableCell usernameCell row justify-start headingCell">
+              Username
+            </div>
+            <div class="tableCell userRoleCell row justify-start headingCell">
+              User Role
+            </div>
+            <div class="tableCell deleteCell row justify-start headingCell">
+              Delete
+            </div>
           </div>
         </div>
-        <div id="userList" class="column justify-center userList">
-        </div>
+        <div id="userList" class="column justify-center userList"></div>
       </div>
       <div id="userModal"></div>
-      <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+      <iframe name="dummyframe" id="dummyframe" style="display: none"></iframe>
       <!-- Footer -->
       <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
     </section>

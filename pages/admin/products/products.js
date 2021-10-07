@@ -328,7 +328,7 @@ const renderProductList = () => {
               <div class="tableCell wideCell row justify-start"><img
               src="/Online-Pharmacy-Portal/assets/images/admin/products/descrip.png"
               class="productInfoIcon" style="width:30px;height:30px;"
-            /><div>${product.productDescription}</div></div>
+            /><div>${product.productDescription.substring(0,product.productDescription.length>40?40:product.productDescription.length)}...</div></div>
               <div class="tableCell narrowCell row justify-start"><img
               src="/Online-Pharmacy-Portal/assets/images/admin/products/category.png"
               class="productInfoIcon" style="width:30px;height:30px;"

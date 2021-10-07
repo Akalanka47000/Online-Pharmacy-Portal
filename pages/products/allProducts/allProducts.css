@@ -5,7 +5,7 @@
 }
 
 .productPageBody {
-  width: 85vw;
+  width: 80vw;
 }
 
 .srch-box {
@@ -13,7 +13,7 @@
 }
 
 .srch-input {
-  width: 63% !important;
+  width: 66% !important;
   margin-right: 20px;
   outline: 3px solid #2e7bff !important;
   border-radius: 5px;
@@ -21,6 +21,7 @@
   border-style: none;
   padding: 15px 30px 15px 30px;
 }
+
 .btnSrch {
   padding-left: 80px !important;
   padding-right: 80px !important;
@@ -32,16 +33,20 @@
   .allProductMainrow {
     flex-direction: column !important;
   }
+
   .productPageBody {
     width: 100vw;
   }
+
   .srch-box {
     flex-direction: column !important;
   }
+
   .srch-input {
     margin-right: 0px;
     margin-bottom: 20px;
   }
+  
   .btnSrch {
     padding-left: 0px !important;
     padding-right: 0px !important;
