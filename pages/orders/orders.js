@@ -31,9 +31,9 @@ const renderOrders = (orderType) => {
         
       } else {
         if(orderType=='active'){
-          element.innerHTML = displayNoOrders("active");
+          element.innerHTML = buildNoOrderComponent("active");
         }else{
-          element.innerHTML = displayNoOrders("completed");
+          element.innerHTML = buildNoOrderComponent("completed");
         }       
       }
     }
@@ -91,19 +91,6 @@ const displayOrderItems = (items, orderType) => {
       </div></div>`;
     orderElement.insertAdjacentHTML("beforeend", orderComponent);
   });
-};
-
-const displayNoOrders = (orderType) => {
-  return `<div class="w-full row justify-center noOrderRow" data-aos=${
-    orderType == "active" ? "fade-left" : "fade-right"
-  }>
-      <img
-      src="/Online-Pharmacy-Portal/assets/images/orders/bino.gif"
-      class="binoImage"
-      />
-      <div class="w-full row justify-center emptyOrders blink">You have no ${orderType} orders</div>
-      
-      </div>`;
 };
 
 if (document.readyState !== "loading") {
