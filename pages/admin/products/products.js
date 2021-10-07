@@ -206,9 +206,8 @@ const renderModal = () => {
           class="row items-center justify-center w-full"
           style="margin-bottom: 4px"
         >
-          <h2 class="modalTitle">${
-            modalPurpose == "add" ? "Add Product" : "Edit Product"
-          }</h2>
+          <h2 class="modalTitle">${modalPurpose == "add" ? "Add Product" : "Edit Product"
+      }</h2>
         </div>
         <button class="btnImageUpload">
         <input
@@ -217,18 +216,17 @@ const renderModal = () => {
           class="imageUploadInput"
           onChange="encodeImage(this.files)"
         ></input>
-        ${
-          headerImage
-            ? `<img
+        ${headerImage
+        ? `<img
                 src=${headerImage}
                 alt="headerImage"
                 class="w-full productFormImageDisplay"
               ></img>`
-            : `<div class="column justify-center">
+        : `<div class="column justify-center">
                 <img src="/Online-Pharmacy-Portal/assets/images/admin/products/cam.png" class="camImage" />
               <div style="margin-top:25px">Upload Image</div>
             </div>`
-        }
+      }
       </button>
         <input
           class="inputField"
@@ -275,12 +273,10 @@ const renderModal = () => {
           required
         >
           <option value="" disabled selected>Product Category</option>
-          <option value="Liquid" ${
-            formData.category == "Liquid" ? "selected" : ""
-          }>Liquid</option>
-          <option value="Tablet" ${
-            formData.category == "Tablet" ? "selected" : ""
-          }>Tablet</option>
+          <option value="Liquid" ${formData.category == "Liquid" ? "selected" : ""
+      }>Liquid</option>
+          <option value="Tablet" ${formData.category == "Tablet" ? "selected" : ""
+      }>Tablet</option>
         </select>
         <button
           type="submit"
@@ -317,9 +313,8 @@ const renderProductList = () => {
       productElement.innerHTML = "";
       products.forEach((product, index) => {
         const productComponent = `
-        <div style="width:100%;" data-aos="${
-          index % 2 == 0 ? "fade-right" : "fade-left"
-        }">
+        <div style="width:100%;" data-aos="${index % 2 == 0 ? "fade-right" : "fade-left"
+          }">
             <div class="row productTableRow">
               <div class="tableCell wideCell row justify-start"><img
               src="/Online-Pharmacy-Portal/assets/images/admin/products/tag.png"
@@ -328,7 +323,12 @@ const renderProductList = () => {
               <div class="tableCell wideCell row justify-start"><img
               src="/Online-Pharmacy-Portal/assets/images/admin/products/descrip.png"
               class="productInfoIcon" style="width:30px;height:30px;"
-            /><div>${product.productDescription.substring(0,product.productDescription.length>40?40:product.productDescription.length)}...</div></div>
+            /><div>${product.productDescription.substring(
+            0,
+            product.productDescription.length > 40
+              ? 40
+              : product.productDescription.length
+          )}...</div></div>
               <div class="tableCell narrowCell row justify-start"><img
               src="/Online-Pharmacy-Portal/assets/images/admin/products/category.png"
               class="productInfoIcon" style="width:30px;height:30px;"
@@ -345,19 +345,15 @@ const renderProductList = () => {
               src="/Online-Pharmacy-Portal/assets/images/admin/products/sold.png"
               class="productInfoIcon" style="width:30px;height:30px;"
             /><div>${product.itemsSold}</div></div>
-              <div class="tableCell narrowCell row justify-center"><div onclick="openEditModal('${
-                product.productID
-              }','${product.productName}','${product.productDescription}','${
-          product.productPrice
-        }','${product.productCategory}','${product.productBrand}','${
-          product.availableStocks
-        }','${product.productImage}',)"><img
+              <div class="tableCell narrowCell row justify-center"><div onclick="openEditModal('${product.productID
+          }','${product.productName}','${product.productDescription}','${product.productPrice
+          }','${product.productCategory}','${product.productBrand}','${product.availableStocks
+          }','${product.productImage}',)"><img
               src="/Online-Pharmacy-Portal/assets/images/admin/edit.png"
               class="editImage"
             /></div></div>
-            <div class="tableCell narrowCell row justify-center"><div onclick="deleteProduct('${
-              product.productID
-            }')"><img
+            <div class="tableCell narrowCell row justify-center"><div onclick="deleteProduct('${product.productID
+          }')"><img
             src="/Online-Pharmacy-Portal/assets/images/admin/bin.png"
             class="binImage"
           /></div></div>
@@ -382,36 +378,42 @@ const renderOrderList = () => {
     if (this.readyState == 4 && this.status == 200) {
       const orders = JSON.parse(this.responseText);
       const orderElement = document.getElementById("orderList");
+      const headings = document.getElementById("orderListHeadings");
       orderElement.innerHTML = "";
-      orders.forEach((order, index) => {
-        const orderComponent = `
-        <div style="width:100%;" data-aos="${
-          index % 2 == 0 ? "fade-right" : "fade-left"
-        }">
-            <div class="row productTableRow">
+      if (orders.length > 0) {
+        headings.style.display = "flex";
+        orders.forEach((order, index) => {
+          const orderComponent = `
+          <div style="width:100%;" data-aos="${index % 2 == 0 ? "fade-right" : "fade-left"
+            }">
+              <div class="row productTableRow">
+                <div class="tableCell narrowCell row justify-start"><img
+                src="/Online-Pharmacy-Portal/assets/images/admin/products/id.png"
+                class="productInfoIcon" style="width:30px;height:20px;"
+              /><div>${order.orderID}</div></div>
+                <div class="tableCell wideCell row justify-start"><img
+                src="/Online-Pharmacy-Portal/assets/images/admin/users/email.svg"
+                class="productInfoIcon" style="width:30px;height:30px;"
+              /><div>${order.email}</div></div>
+                <div class="tableCell wideCell row justify-start"><img
+                src="/Online-Pharmacy-Portal/assets/images/admin/products/tag.png"
+                class="productInfoIcon" style="width:30px;height:20px;"
+              /><div>${order.productName}</div></div>
+              <div class="tableCell wideCell row justify-start"><img
+                src="/Online-Pharmacy-Portal/assets/images/admin/products/date.png"
+                class="productInfoIcon" style="width:30px;height:30px;"
+              /><div>${order.placedDate}</div></div>
               <div class="tableCell narrowCell row justify-start"><img
-              src="/Online-Pharmacy-Portal/assets/images/admin/products/id.png"
-              class="productInfoIcon" style="width:30px;height:20px;"
-            /><div>${order.orderID}</div></div>
-              <div class="tableCell wideCell row justify-start"><img
-              src="/Online-Pharmacy-Portal/assets/images/admin/users/email.svg"
-              class="productInfoIcon" style="width:30px;height:30px;"
-            /><div>${order.email}</div></div>
-              <div class="tableCell wideCell row justify-start"><img
-              src="/Online-Pharmacy-Portal/assets/images/admin/products/tag.png"
-              class="productInfoIcon" style="width:30px;height:20px;"
-            /><div>${order.productName}</div></div>
-            <div class="tableCell wideCell row justify-start"><img
-              src="/Online-Pharmacy-Portal/assets/images/admin/products/date.png"
-              class="productInfoIcon" style="width:30px;height:30px;"
-            /><div>${order.placedDate}</div></div>
-            <div class="tableCell narrowCell row justify-start"><img
-              src="/Online-Pharmacy-Portal/assets/images/admin/products/status.png"
-              class="productInfoIcon" style="width:30px;height:30px;"
-            /><div>${order.orderStatus}</div></div>
-            </div></div>`;
-        orderElement.insertAdjacentHTML("beforeend", orderComponent);
-      });
+                src="/Online-Pharmacy-Portal/assets/images/admin/products/status.png"
+                class="productInfoIcon" style="width:30px;height:30px;"
+              /><div>${order.orderStatus}</div></div>
+              </div></div>`;
+          orderElement.insertAdjacentHTML("beforeend", orderComponent);
+        });
+      } else {
+        headings.style.display = "none";
+        orderElement.innerHTML = buildNoOrderComponent(selectedOrderTab);
+      }
     }
   };
   xmlhttp.open("POST", "products.php", true);

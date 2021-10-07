@@ -1,54 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
-    <link
-      rel="stylesheet"
-      href="/Online-Pharmacy-Portal/pages/products/allProducts/allProducts.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/Online-Pharmacy-Portal/components/product/product.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css"
-    />
-    <script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
-    <script src="/Online-Pharmacy-Portal/pages/products/allProducts/allProducts.js"></script>
-    <script src="/Online-Pharmacy-Portal/components/product/product.js"></script>
-    <title>Browse | Simple Meds</title>
-  </head>
-  <body>
-    <section>
-      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
-      <div class="row allProductMainrow">
-        <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/pages/products/allProducts/menuBar/"; include($PATH."menuBar.html"); ?>
-        <div class="column justify-center productPageBody" data-aos="fade-left">
-          <div class="w-full row justify-center srch-box">
-            <input
-              class="srch-input"
-              type="text"
-              placeholder="Enter a product name"
-              data-aos="fade-left"
-            />
-            <div data-aos="fade-left">
-              <div class="button btnSrch">Search</div>
-            </div>
-           
-          </div>
-          <div class="row justify-center allProducts" id="productList"></div>
-        </div>
-      </div>
 
-      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
-    </section>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+  <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
+  <link rel="stylesheet" href="/Online-Pharmacy-Portal/pages/products/allProducts/allProducts.css" />
+  <link rel="stylesheet" href="/Online-Pharmacy-Portal/components/product/product.css" />
+  <link rel="stylesheet" href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css" />
+  <script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
+  <script src="/Online-Pharmacy-Portal/pages/products/allProducts/allProducts.js"></script>
+  <script src="/Online-Pharmacy-Portal/components/product/product.js"></script>
+  <title>Browse | Simple Meds</title>
+</head>
+
+<body>
+  <section>
+    <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
+    <div class="row allProductMainrow">
+      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/pages/products/allProducts/menuBar/"; include($PATH."menuBar.html"); ?>
+      <div class="column justify-center productPageBody" data-aos="fade-left">
+        <div class="w-full row justify-center srch-box">
+          <input class="srch-input" type="text" placeholder="Enter a product name" data-aos="fade-left" />
+          <div data-aos="fade-left">
+            <div class="button btnSrch">Search</div>
+          </div>
+
+        </div>
+        <div class="row justify-center allProducts" id="productList"></div>
+      </div>
+    </div>
+
+    <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
+  </section>
+</body>
+
 </html>

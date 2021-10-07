@@ -220,20 +220,43 @@
   margin-bottom: 80px;
 }
 
-@media screen and (max-width: 960px) {
-  .admin_Header_Bar {
-    text-align: center;
+.emptyOrders {
+  font-size: 23px;
+  color: #0d2b60;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-right: 50px;
+  text-align: center;
+}
+
+.binoImage {
+  width: 25vw;
+  margin-left: 250px;
+  margin-right: 50px;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+
+.noOrderRow {
+  margin-right: 60px;
+  margin-bottom: 80px;
+}
+
+@media screen and (max-width: 1260px){
+  .emptyOrders {
+    font-size: 20px;
   }
 
-  .modalForm {
-    width: 55vw;
-    margin-right: auto;
-    margin-left: auto;
+  .binoImage {
+    width: 50vw;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 10px;
+    transition: all 0.4s ease;
   }
 
-  .camImage {
-    width: 65px;
-    height: 50px;
+  .noOrderRow {
+    margin-bottom: 60px;
   }
 }
 
@@ -265,6 +288,42 @@
   .productInfoIcon {
     display: flex;
     margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .admin_Header_Bar {
+    text-align: center;
+  }
+
+  .modalForm {
+    width: 55vw;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .camImage {
+    width: 65px;
+    height: 50px;
+  }
+
+  .emptyOrders {
+    font-size: 18px;
+    margin-right: 0px;
+  }
+
+  .binoImage {
+    width: 80vw;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+  }
+
+  .noOrderRow {
+    flex-direction: column !important;
+    margin-right: 0px;
+    margin-bottom: 20px;
   }
 }
 

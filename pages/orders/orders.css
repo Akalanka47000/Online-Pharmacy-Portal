@@ -62,28 +62,6 @@
   transform: scale(1.015, 1.015);
 }
 
-.emptyOrders {
-  font-size: 23px;
-  color: #0d2b60;
-  margin-top: 20px;
-  margin-bottom: 50px;
-  margin-right: 50px;
-  text-align: center;
-}
-
-.binoImage {
-  width: 25vw;
-  margin-left: 250px;
-  margin-right: 50px;
-  border-radius: 10px;
-  transition: all 0.4s ease;
-}
-
-.noOrderRow {
-  margin-right: 60px;
-  margin-bottom: 80px;
-}
-
 .headings {
   width: auto;
   margin-left: 60px;
@@ -184,22 +162,6 @@
   .cardNameTxt {
     font-size: 25px;
   }
-
-  .emptyOrders {
-    font-size: 20px;
-  }
-
-  .binoImage {
-    width: 50vw;
-    margin-left: 50px;
-    margin-right: 50px;
-    border-radius: 10px;
-    transition: all 0.4s ease;
-  }
-
-  .noOrderRow {
-    margin-bottom: 60px;
-  }
 }
 
 @media screen and (max-width: 1060px) {
@@ -255,24 +217,5 @@
 
   .cardNameTxt {
     font-size: 20px;
-  }
-
-  .emptyOrders {
-    font-size: 18px;
-    margin-right: 0px;
-  }
-
-  .binoImage {
-    width: 80vw;
-    margin-left: 50px;
-    margin-right: 50px;
-    border-radius: 10px;
-    transition: all 0.4s ease;
-  }
-
-  .noOrderRow {
-    flex-direction: column !important;
-    margin-right: 0px;
-    margin-bottom: 20px;
   }
 }

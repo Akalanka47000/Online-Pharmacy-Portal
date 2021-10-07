@@ -5,6 +5,8 @@
   <link rel="stylesheet" href="/Online-Pharmacy-Portal/pages/admin/products/products.css" />
   <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+  <link rel="stylesheet" href="/Online-Pharmacy-Portal/components/noOrders/noOrders.css" />
+  <script src="/Online-Pharmacy-Portal/components/noOrders/noOrders.js"></script>
   <script async src="/Online-Pharmacy-Portal/pages/admin/products/products.js"></script>
   <link rel="stylesheet" href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css" />
   <script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
@@ -57,7 +59,8 @@
           Completed Order Requests
         </div>
       </div>
-      <div class="column justify-center productListHeadings" style="margin-top: 0px;" data-aos="fade-left">
+      <div class="column justify-center productListHeadings" id="orderListHeadings" style="margin-top: 0px;"
+        data-aos="fade-left">
         <div class="row productTableHeading">
           <div class="tableCell narrowCell row justify-start headingCell">Order ID</div>
           <div class="tableCell wideCell row justify-start headingCell">Customer Email</div>
