@@ -8,9 +8,8 @@
     $to_email = "it21072642@my.sliit.lk";
     $subject = "Hello there!";
     $body = "From : ".$email."\nName : ".$name."\nMessage: ".$message;
-    $headers = "";
     
-    if (mail($to_email, $subject, $body, $headers)) {
+    if (mail($to_email, $subject, $body, "")) {
         echo "{\"success\":true,\"message\":\"Email sent successfully\"}";
     } else {
         echo "{\"success\":false,\"message\":\"Failed to send mail\"}";
