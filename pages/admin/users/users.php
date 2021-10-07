@@ -21,7 +21,7 @@
         
             $email=$_POST["email"];
             $username=$_POST["username"];
-            $password=$_POST["password"];
+            $password=md5($_POST["password"]);
             $userRole=$_POST["userRole"];
         
             $sql = "INSERT INTO Users (email, username, password, userRole, address)

@@ -23,7 +23,7 @@
             $table1 = "CREATE TABLE IF NOT EXISTS Users (
                 email VARCHAR(30),
                 username VARCHAR(20),
-                password VARCHAR(20),
+                password VARCHAR(32),
                 userRole VARCHAR(10),
                 address VARCHAR(40),
                 constraint user_pk primary key (email)
