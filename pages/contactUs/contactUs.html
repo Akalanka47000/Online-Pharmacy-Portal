@@ -22,6 +22,9 @@
 
 <body>
     <section>
+        <div id="loadingOverlay" class="row justify-center items-center" style="height: 100vh;width: 100vw;background-color: black; opacity: 50%; position: fixed; z-index: 5;">
+                <div class="loader"></div>
+        </div>
         <!-- Navbar -->
         <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
         <div class="column">
