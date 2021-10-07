@@ -35,10 +35,13 @@
           <div class="w-full row justify-center srch-box">
             <input
               class="srch-input"
+              id="search-input"
               type="text"
               placeholder="Enter a product name"
             />
-            <div class="button btnSrch">Search</div>
+            <div class="button btnSrch" onclick="renderSearchProducts()">
+              Search
+            </div>
           </div>
           <div class="row justify-center allProducts" id="productList"></div>
         </div>
