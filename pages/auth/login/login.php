@@ -7,7 +7,7 @@ if ($function == "loginUser") {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $email = $_POST["email"];
-        $password = $_POST["password"];
+        $password = md5($_POST["password"]);
 
         $sql = "SELECT * FROM Users WHERE email='$email' AND password='$password'";
         $result = $conn->query($sql);

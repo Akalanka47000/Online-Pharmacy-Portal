@@ -60,8 +60,8 @@ const renderProduct = () => {
       document.title = `${products[0].productName} | Simple Meds`;
       const productElement = document.getElementById("productContainer");
       productElement.innerHTML = "";
-      const productComponent = `<div class="product_row">
-          <div class="product">
+      const productComponent = `<div class="product_row" data-aos="fade">
+          <div class="product" data-aos="fade-right">
             <div class="product-figure"></div>
             <img
             class="product-img"
@@ -69,7 +69,7 @@ const renderProduct = () => {
             alt="product vitamin c"
           />
           </div>
-          <div class="info">
+          <div class="info" data-aos="fade-left">
             <div class="column items-start product-info">
               <div class="info-title">${products[0].productName}</div>
               <p class="info-description">

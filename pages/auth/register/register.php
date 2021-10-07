@@ -8,7 +8,7 @@
             
             $email=$_POST["email"];
             $username=$_POST["username"];
-            $password=$_POST["password"];
+            $password=md5($_POST["password"]);
             $address=$_POST["address"];
         
             $sql = "INSERT INTO Users (email, username, password, userRole, address)

@@ -293,7 +293,7 @@ const renderModal = () => {
             margin-left: 0px;
           "
         >
-          ${modalPurpose == "add" ? "Add Product" : "Edit Product"}
+          ${modalPurpose == "add" ? "Add Product" : "Update Product"}
         </button>
       </form>
     </div>
