@@ -94,18 +94,18 @@ const displayCartItems = (items) => {
 };
 
 const displayNoItems = () => {
-  return ` <div class="emptyCartBG" data-aos="fade-left">
-    <div class="w-full row justify-center emptyCartRow">
-      <img
-        src="/Online-Pharmacy-Portal/assets/images/cart/emptyCart.png"
-        class="emptyCartImage"
-      />
+  return `<div data-aos="fade-left"><div class="emptyCartBG" >
+  <div class="w-full row justify-center emptyCartRow">
+    <img
+      src="/Online-Pharmacy-Portal/assets/images/cart/emptyCart.png"
+      class="emptyCartImage"
+    />
 
-      <div class="row justify-center emptyCart blink">
-        Your cart is empty
-      </div>
+    <div class="row justify-center emptyCart blink">
+      Your cart is empty
     </div>
-  </div>`;
+  </div>
+</div></div>`;
 };
 
 if (document.readyState !== "loading") {

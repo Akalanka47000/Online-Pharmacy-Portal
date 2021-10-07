@@ -85,7 +85,8 @@ const toggleChatModal = () => {
   chatModalOpen = !chatModalOpen;
   const userRole = localStorage.getItem("userRole");
   if (userRole == "Admin") {
-    renderAdminChatModal();
+    //renderAdminChatModal();
+    renderUserChatModal();
   } else {
     renderUserChatModal();
   }
