@@ -23,16 +23,17 @@
       <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/pages/products/allProducts/menuBar/"; include($PATH."menuBar.html"); ?>
       <div class="column justify-center productPageBody" data-aos="fade-left">
         <div class="w-full row justify-center srch-box">
-          <input class="srch-input" type="text" placeholder="Enter a product name" data-aos="fade-left" />
+          <input class="srch-input" id="search-input" type="text" placeholder="Enter a product name"
+            onchange="renderSearchProducts()" />
           <div data-aos="fade-left">
-            <div class="button btnSrch">Search</div>
+            <div class="button btnSrch" onclick="renderSearchProducts()">
+              Search
+            </div>
           </div>
-
         </div>
         <div class="row justify-center allProducts" id="productList"></div>
       </div>
     </div>
-
     <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
   </section>
 </body>

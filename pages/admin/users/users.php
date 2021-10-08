@@ -19,14 +19,14 @@
             // $password_string = '!@#$%*&abcdefghijklmnpqrstuwxyzABCDEFGHJKLMNPQRSTUWXYZ23456789';
             // $password = substr(str_shuffle($password_string), 0, 12);
             $password = "123456";
-            $encrypedPassword = md5($password);
+            $encryptedPassword = md5($password);
 
             $email=$_POST["email"];
             $username=$_POST["username"];
             $userRole=$_POST["userRole"];
         
             $sql = "INSERT INTO Users (email, username, password, userRole, address)
-            VALUES ('$email', '$username', '$encrypedPassword' , '$userRole', 'NULL')";
+            VALUES ('$email', '$username', '$encryptedPassword' , '$userRole', 'NULL')";
 
             $result='';
 

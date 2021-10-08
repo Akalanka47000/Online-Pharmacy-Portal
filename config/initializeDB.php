@@ -73,10 +73,14 @@
                 constraint msg_fk1 foreign key (senderEmail) references Users(email),
                 constraint msg_fk2 foreign key (chatroomID) references Chatrooms(chatroomID)
             )";
+            
+            $encryptedPassword=md5("123456");
+            $query1 = "INSERT INTO Users (email, username, password, userRole, address)
+            VALUES ('admin@gmail.com', 'admin', '$encryptedPassword' , 'Admin', 'NULL')";
 
-            $tables = [$table1, $table2, $table3, $table4, $table5];
+            $queries = [$table1, $table2, $table3, $table4, $table5, $query1];
 
-            foreach($tables as $k => $sql){
+            foreach($queries as $k => $sql){
                 $query = @$conn->query($sql);
 
                 if(!$query){

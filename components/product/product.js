@@ -10,7 +10,7 @@ const buildProduct = (product) => {
     <div class="row justify-between TSP_Details" style="margin-top: 40px">
       <div class="column">
         <div class="detailText" style="margin-bottom: 20px">${product.productName}</div>
-        <div class="detailText">Rs.${product.productPrice}</div>
+        <div class="detailText">Rs. ${product.productPrice}</div>
       </div>
       <div
         class="button btnViewTSP_Details"

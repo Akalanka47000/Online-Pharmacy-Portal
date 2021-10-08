@@ -11,30 +11,30 @@ const getActiveOrders = () => {
 const renderOrders = (orderType) => {
   const email = localStorage.getItem("email");
   var data = new FormData();
-  data.append("function", orderType=='active'?"getActiveOrders":"getCompletedOrders");
+  data.append("function", orderType == 'active' ? "getActiveOrders" : "getCompletedOrders");
   data.append("email", email);
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       const orders = JSON.parse(this.responseText);
-      const element = document.getElementById( orderType=='active'?"activeOrdersTable":"completedOrdersTable");
-      const orderCountText= document.getElementById( orderType=='active'?"activeOrderText":"completedOrderText");
-      orderCountText.innerText=orders.length;
+      const element = document.getElementById(orderType == 'active' ? "activeOrdersTable" : "completedOrdersTable");
+      const orderCountText = document.getElementById(orderType == 'active' ? "activeOrderText" : "completedOrderText");
+      orderCountText.innerText = orders.length;
       if (orders.length > 0) {
-        if( orderType=='active'){
+        if (orderType == 'active') {
           element.innerHTML = getHeadings('active');
-          displayOrderItems(orders,'active');
-        }else{
+          displayOrderItems(orders, 'active');
+        } else {
           element.innerHTML = getHeadings('completed');
-          displayOrderItems(orders,'completed');
+          displayOrderItems(orders, 'completed');
         }
-        
+
       } else {
-        if(orderType=='active'){
-          element.innerHTML = buildNoOrderComponent("active");
-        }else{
-          element.innerHTML = buildNoOrderComponent("completed");
-        }       
+        if (orderType == 'active') {
+          element.innerHTML = buildNoOrderComponent("active", "ordersPage");
+        } else {
+          element.innerHTML = buildNoOrderComponent("completed", "ordersPage");
+        }
       }
     }
   };
@@ -53,7 +53,7 @@ const getHeadings = (orderType) => {
       <div class="tableCell narrowCell row justify-start headingCell">Order Status</div>
     </div>
   </div>
-  <div id="${ orderType == "active" ?"activeItemList" : "completedItemList"}" class="column justify-start itemList">
+  <div id="${orderType == "active" ? "activeItemList" : "completedItemList"}" class="column justify-start itemList">
   `;
 };
 
@@ -64,9 +64,8 @@ const displayOrderItems = (items, orderType) => {
   orderElement.innerHTML = "";
   items.forEach((order, index) => {
     const orderComponent = `
-  <div style="width:100%;" data-aos="${
-    index % 2 == 0 ? "fade-right" : "fade-left"
-  }">
+  <div style="width:100%;" data-aos="${index % 2 == 0 ? "fade-right" : "fade-left"
+      }">
       <div class="row tableRow">
         <div class="tableCell narrowCell row justify-start"><img
         src="/Online-Pharmacy-Portal/assets/images/admin/products/id.png"

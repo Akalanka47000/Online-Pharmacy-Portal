@@ -412,7 +412,7 @@ const renderOrderList = () => {
         });
       } else {
         headings.style.display = "none";
-        orderElement.innerHTML = buildNoOrderComponent(selectedOrderTab);
+        orderElement.innerHTML = buildNoOrderComponent(selectedOrderTab, "managementPage");
       }
     }
   };

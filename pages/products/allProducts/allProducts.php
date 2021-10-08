@@ -21,5 +21,21 @@
         }
 
         echo json_encode($results);
+
+    }else if($function == "getSearchProducts"){
+        $keyword = $_POST["userInput"];
+
+        $sql = "SELECT * FROM Products WHERE productName LIKE '%$keyword%'";
+        
+        $result = $conn->query($sql);
+
+        $results = array();
+        while($row = $result->fetch_assoc()){
+            $results[] = $row;
+        } 
+
+        echo json_encode($results);
+        
     }
     $conn->close();
+?>
