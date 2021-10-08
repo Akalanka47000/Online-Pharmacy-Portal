@@ -328,7 +328,7 @@ const renderProductList = () => {
             product.productDescription.length > 40
               ? 40
               : product.productDescription.length
-          )}...</div></div>
+          )}${product.productDescription.length > 40?"...":""}</div></div>
               <div class="tableCell narrowCell row justify-start"><img
               src="/Online-Pharmacy-Portal/assets/images/admin/products/category.png"
               class="productInfoIcon" style="width:30px;height:30px;"
