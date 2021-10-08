@@ -1,87 +1,70 @@
 <html>
-  <head>
-    <title>User Management | Simple Meds</title>
-    <link
-      rel="stylesheet"
-      href="/Online-Pharmacy-Portal/pages/admin/users/users.css"
-    />
-    <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto"
-      rel="stylesheet"
-    />
-    <script
-      async
-      src="/Online-Pharmacy-Portal/pages/admin/users/users.js"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css"
-    />
-    <script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
-    <script src="/Online-Pharmacy-Portal/assets/packages/sweetalert2/sweetalert2.all.min.js"></script>
-    <meta name="viewport" content="width=device-width" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1"
-    />
-  </head>
 
-  <body>
-    <section>
-      <!-- Navbar -->
-      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
-      <div class="column">
-        <div data-aos="fade-right">
-          <div class="admin_Header_Bar">ADMIN PANEL</div>
-        </div>
-        <div class="managementTabRow row">
-          <a
-            href="/Online-Pharmacy-Portal/pages/admin/users/users.html"
-            id="userTab"
-            class="managementTab userTab"
-            data-aos="fade-right"
-          >
-            User Management</a
-          >
-          <a
-            href="/Online-Pharmacy-Portal/pages/admin/products/products.html"
-            id="productTab"
-            class="managementTab productTab"
-            data-aos="fade-left"
-          >
-            Product Management</a
-          >
-        </div>
-        <div class="row justify-end userBtnRow">
-          <div data-aos="fade-left">
-            <div
-              class="button"
-              style="width: auto; padding-left: 50px; padding-right: 50px"
-              onclick="toggleModal()"
-            >
-              Add New User
-            </div>
+<head>
+  <title>User Management | Simple Meds</title>
+  <link rel="stylesheet" href="/Online-Pharmacy-Portal/pages/admin/users/users.css" />
+  <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+  <script async src="/Online-Pharmacy-Portal/pages/admin/users/users.js"></script>
+  <script src="/Online-Pharmacy-Portal/components/loadingOverlay/loadingOverlay.js"></script>
+  <link rel="stylesheet" href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css" />
+  <script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
+  <script src="/Online-Pharmacy-Portal/assets/packages/sweetalert2/sweetalert2.all.min.js"></script>
+  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+</head>
+
+<body>
+  <section>
+    <!-- Overlay -->
+    <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/loadingOverlay/"; include($PATH."loadingOverlay.html");?>
+    <!-- Navbar -->
+    <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
+    <div class="column">
+      <div data-aos="fade-right">
+        <div class="admin_Header_Bar">ADMIN PANEL</div>
+      </div>
+      <div class="managementTabRow row">
+        <a href="/Online-Pharmacy-Portal/pages/admin/users/users.html" id="userTab" class="managementTab userTab"
+          data-aos="fade-right">
+          User Management</a>
+        <a href="/Online-Pharmacy-Portal/pages/admin/products/products.html" id="productTab"
+          class="managementTab productTab" data-aos="fade-left">
+          Product Management</a>
+      </div>
+      <div class="row justify-end userBtnRow">
+        <div data-aos="fade-left">
+          <div class="button" style="width: auto; padding-left: 50px; padding-right: 50px" onclick="toggleModal()">
+            Add New User
           </div>
-        </div>
-        <div data-aos="fade-right">
-          <div class="Admin_Header_Bar">USERS</div>
-        </div>
-        <div class="column justify-center userListHeadings" data-aos="fade-left">
-          <div class="row userTableHeading">
-            <div class="tableCell emailCell row justify-start headingCell">User Email</div>
-            <div class="tableCell usernameCell row justify-start headingCell"> Username</div>
-            <div class="tableCell userRoleCell row justify-start headingCell">User Role</div>
-            <div class="tableCell deleteCell row justify-start headingCell">Delete</div>
-          </div>
-        </div>
-        <div id="userList" class="column justify-center userList">
         </div>
       </div>
-      <div id="userModal"></div>
-      <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
-      <!-- Footer -->
-      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
-    </section>
-  </body>
+      <div data-aos="fade-right">
+        <div class="Admin_Header_Bar">USERS</div>
+      </div>
+      <div class="column justify-center userListHeadings" data-aos="fade-left">
+        <div class="row userTableHeading">
+          <div class="tableCell emailCell row justify-start headingCell">
+            User Email
+          </div>
+          <div class="tableCell usernameCell row justify-start headingCell">
+            Username
+          </div>
+          <div class="tableCell userRoleCell row justify-start headingCell">
+            User Role
+          </div>
+          <div class="tableCell deleteCell row justify-start headingCell">
+            Delete
+          </div>
+        </div>
+      </div>
+      <div id="userList" class="column justify-center userList"></div>
+    </div>
+    <div id="userModal"></div>
+    <iframe name="dummyframe" id="dummyframe" style="display: none"></iframe>
+    <!-- Footer -->
+    <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
+  </section>
+</body>
+
 </html>

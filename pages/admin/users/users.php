@@ -18,24 +18,35 @@
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             // $password_string = '!@#$%*&abcdefghijklmnpqrstuwxyzABCDEFGHJKLMNPQRSTUWXYZ23456789';
             // $password = substr(str_shuffle($password_string), 0, 12);
-        
+            $password = "123456";
+            $encrypedPassword = md5($password);
+
             $email=$_POST["email"];
             $username=$_POST["username"];
-            $password=md5($_POST["password"]);
             $userRole=$_POST["userRole"];
         
             $sql = "INSERT INTO Users (email, username, password, userRole, address)
-            VALUES ('$email', '$username', '$password' , '$userRole', 'NULL')";
-        
+            VALUES ('$email', '$username', '$encrypedPassword' , '$userRole', 'NULL')";
+
             $result='';
-        
+
             if ($conn->query($sql) === TRUE) {
-            $result="{\"success\":true,\"message\":\"User added successfully\"}";
+                $to_email = $email;
+                $subject = "Simple Meds Login Credentials";
+                $body = "Congratulations! You have been added as a ".$userRole." to the Simple Meds Web Portal. Following are your login credentials:\nUsername : ".$username."\nPassword: ".$password."\n\nThank You.\nBest Regards,\nSimple Meds Team.";
+
+                if(mail($to_email, $subject, $body, "")){
+                    $result="{\"success\":true,\"message\":\"User added successfully\"}";
+                }else{
+                    $result="{\"success\":false,\"message\":\"User added sucessfully but failed to send email\"}";
+                }
+
             } else {
-            $result="{\"success\":false,\"message\":\"".$conn->error."\"}";
+                $result="{\"success\":false,\"message\":\"".$conn->error."\"}";
             }
         
             echo $result;
+
         }
         
     }else if($function =="deleteUser"){
@@ -45,6 +56,10 @@
         $result='';
         
         if ($conn->query($sql) === TRUE) {
+            $to_email = $email;
+            $subject = "Access Revoked";
+            $body = "Your access to the Simple Meds Web Portal has been revoked\n\nThank You.\nBest Regards,\nSimple Meds Team.";
+            mail($to_email, $subject, $body, "");
             $result="{\"success\":true,\"message\":\"User deleted successfully\"}";
         } else {
             $result="{\"success\":false,\"message\":\"".$conn->error."\"}";
@@ -55,4 +70,3 @@
 
 
     $conn->close();
-?>

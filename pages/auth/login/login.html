@@ -1,76 +1,42 @@
 <html>
-  <head>
-    <title>Login | Simple Meds</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="/Online-Pharmacy-Portal/pages/auth/login/login.css"
-    />
-    <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
-    <script src="/Online-Pharmacy-Portal/pages/auth/login/login.js"></script>
-    <link
-      rel="stylesheet"
-      href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css"
-    />
-    <script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
-    <script src="/Online-Pharmacy-Portal/assets/packages/sweetalert2/sweetalert2.all.min.js"></script>
-    <meta name="viewport" content="width=device-width" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1"
-    />
-  </head>
-  <body>
-    <section>
-      <!-- Navbar -->
-      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
-      <div class="row justify-center loginRow">
-        <img
-          src="/Online-Pharmacy-Portal/assets/images/auth/Mobile login-rafiki.png"
-          class="loginImage"
-        />
-        <div class="column justify-center loginFormContainer">
-          <form
-            id="loginForm"
-            method="POST"
-            class="loginForm column justify-center"
-          >
-            <div class="login_Header_Bar">Welcome</div>
-            <input
-              class="inputField loginInput"
-              type="email"
-              size="50"
-              id="email"
-              placeholder="Email"
-              required
-            />
-            <input
-              class="inputField loginInput"
-              type="password"
-              size="50"
-              id="pwd"
-              placeholder="Password"
-              required
-            />
-            <br />
-            <button type="submit" class="button btnConfirm">Log In</button>
-            <a class="anchortag black" href="gkjh">Forgot your password?</a
-            ><br />
 
-            <a
-              class="anchortag blue"
-              href="/Online-Pharmacy-Portal/pages/auth/register/register.html"
-              >Haven't signed up yet?</a
-            ><br /><br />
-          </form>
-        </div>
+<head>
+  <title>Login | Simple Meds</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+  <link rel="stylesheet" href="/Online-Pharmacy-Portal/pages/auth/login/login.css" />
+  <link rel="stylesheet" href="/Online-Pharmacy-Portal/globals.css" />
+  <script src="/Online-Pharmacy-Portal/pages/auth/login/login.js"></script>
+  <link rel="stylesheet" href="/Online-Pharmacy-Portal/assets/packages/aos/aos.css" />
+  <script src="/Online-Pharmacy-Portal/assets/packages/aos/aos.js"></script>
+  <script src="/Online-Pharmacy-Portal/assets/packages/sweetalert2/sweetalert2.all.min.js"></script>
+  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+</head>
+
+<body>
+  <section>
+    <!-- Navbar -->
+    <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/navbar/"; include($PATH."navbar.html"); ?>
+    <div class="row justify-center loginRow">
+      <img src="/Online-Pharmacy-Portal/assets/images/auth/Mobile login-rafiki.png" class="loginImage" />
+      <div class="column justify-center loginFormContainer">
+        <form id="loginForm" method="POST" class="loginForm column justify-center">
+          <div class="login_Header_Bar">Welcome</div>
+          <input class="inputField loginInput" type="email" size="50" id="email" placeholder="Email" required />
+          <input class="inputField loginInput" type="password" size="50" id="pwd" placeholder="Password" required />
+          <br />
+          <button type="submit" class="button btnConfirm">Log In</button>
+          <a class="anchortag black" href="gkjh">Forgot your password?</a><br />
+
+          <a class="anchortag blue" href="/Online-Pharmacy-Portal/pages/auth/register/register.html">Haven't signed up
+            yet?</a><br /><br />
+        </form>
       </div>
-      <!-- Footer -->
-      <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
-    </section>
-  </body>
+    </div>
+    <!-- Footer -->
+    <?php $PATH = $_SERVER["DOCUMENT_ROOT"]."/Online-Pharmacy-Portal/components/layout/footer/"; include($PATH."footer.html"); ?>
+  </section>
+</body>
+
 </html>

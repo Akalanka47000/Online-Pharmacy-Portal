@@ -7,15 +7,16 @@ const toggleModal = () => {
 
 const handleSubmit = (e) => {
   e.preventDefault();
+  renderLoadingOverlay(true);
   var data = new FormData();
   data.append("function","addUser");
   data.append("email", e.target.email.value);
   data.append("username", e.target.username.value);
-  data.append("password", e.target.password.value);
   data.append("userRole", e.target.userRole.value);
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
+      renderLoadingOverlay(false);
       const result = JSON.parse(this.responseText);
       if (result.success == true) {
         toggleModal();
@@ -57,12 +58,14 @@ const handleSubmit = (e) => {
 };
 
 const deleteUser = (email) => {
+  renderLoadingOverlay(true);
   var data = new FormData();
   data.append("function","deleteUser");
   data.append("email", email);
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
+      renderLoadingOverlay(false);
       const result = JSON.parse(this.responseText);
       if (result.success == true) {
         let timerInterval
@@ -138,13 +141,6 @@ const renderModal = () => {
           id="email"
           required
         />
-        <input
-          class="inputField"
-          placeholder="Password"
-          type="password"
-          id="password"
-          required
-        />
         <select
           class="inputField"
           id="userRole"
@@ -218,6 +214,7 @@ const renderUserList = () =>{
 
 const initialize = () => {
   AOS.init({ offset: 0, duration: 1000 });
+  renderLoadingOverlay(false);
   renderUserList();
   renderModal();
   document
