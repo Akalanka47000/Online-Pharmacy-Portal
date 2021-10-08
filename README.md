@@ -20,3 +20,8 @@ https://meetanshi.com/blog/send-mail-from-localhost-xampp-using-gmail/
 For initial Admin access to the system please use the following credentials:
 Email - admin@gmail.com
 Password - 123456
+
+The following packages have been used in the website and credits go to the authors as follows:
+Particles.js - @mentions VincentGarreau
+Sweetalert2 - @mentions limonte 
+AOS - @mentions michalsnik
