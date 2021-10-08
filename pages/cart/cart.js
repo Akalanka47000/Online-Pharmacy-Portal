@@ -64,9 +64,8 @@ const displayCartItems = (items) => {
   orderElement.innerHTML = "";
   items.forEach((cartItem, index) => {
     const component = `
-    <div style="width:100%;" data-aos="${
-      index % 2 == 0 ? "fade-right" : "fade-left"
-    }">
+    <div style="width:100%;" data-aos="${index % 2 == 0 ? "fade-right" : "fade-left"
+      }">
         <div class="row tableRow">
           <div class="tableCell wideCell row justify-start"><img
           src="/Online-Pharmacy-Portal/assets/images/admin/products/id.png"
@@ -75,7 +74,12 @@ const displayCartItems = (items) => {
           <div class="tableCell wideCell row justify-start"><img
           src="/Online-Pharmacy-Portal/assets/images/admin/products/descrip.png"
           class="productInfoIcon" style="width:30px;height:30px;"
-        /><div>${cartItem.productDescription}</div></div>
+        /><div>${cartItem.productDescription.substring(
+        0,
+        cartItem.productDescription.length > 70
+          ? 70
+          : cartItem.productDescription.length
+      )}${cartItem.productDescription.length > 70?"...":""}</div></div>
           <div class="tableCell narrowCell row justify-start"><img
           src="/Online-Pharmacy-Portal/assets/images/admin/products/price.png"
           class="productInfoIcon" style="width:30px;height:30px;"
