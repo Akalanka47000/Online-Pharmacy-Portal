@@ -22,6 +22,9 @@ Email - admin@gmail.com
 Password - 123456
 
 The following packages have been used in the website and credits go to the authors as follows:
-Particles.js - @mentions VincentGarreau
-Sweetalert2 - @mentions limonte 
-AOS - @mentions michalsnik
+
+Particles.js - @VincentGarreau
+
+Sweetalert2 - @limonte 
+
+AOS - @michalsnik
