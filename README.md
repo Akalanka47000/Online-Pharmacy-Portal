@@ -1,9 +1,7 @@
 # Online-Pharmacy-Portal
 
-An Online pharmacy portal
-
 Wireframe :
-![IWT wireframe](https://user-images.githubusercontent.com/73662613/132163773-1bd7bbfa-857c-400a-9bf8-01987935933e.jpg)
+![IWT wireframe](https://user-images.githubusercontent.com/73662613/136523039-5a94cf18-d476-49e2-8c2e-ebc6a937ed67.jpg)
 
 Steps to get the web app running:
 1. Move the entire Online-Pharmacy-Portal folder inside the xampp root directory (htdocs by default)
