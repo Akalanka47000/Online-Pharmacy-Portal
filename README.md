@@ -1,6 +1,7 @@
 # Online-Pharmacy-Portal
 
 Wireframe :
+
 ![IWT wireframe](https://user-images.githubusercontent.com/73662613/136523039-5a94cf18-d476-49e2-8c2e-ebc6a937ed67.jpg)
 
 Steps to get the web app running:
