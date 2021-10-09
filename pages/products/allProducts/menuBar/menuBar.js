@@ -20,6 +20,21 @@ const renderFilters = () => {
   }
 };
 
+const getProductBrands = () => {
+  var data = new FormData();
+  data.append("function", "getBrands");
+
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      var brands = JSON.parse(this.responseText);
+    }
+  };
+
+  xmlhttp.open("POST", "allProducts.php", true);
+  xmlhttp.send(data);
+};
+
 const categories = ["All", "Liquid", "Tablet"];
 const brands = ["All", "Brand1", "Brand2"];
 
@@ -64,6 +79,7 @@ const initSideNav = () => {
   renderCategoryItems();
   renderBrandItems();
   renderFilters();
+  getProductBrands();
 };
 
 if (document.readyState !== "loading") {

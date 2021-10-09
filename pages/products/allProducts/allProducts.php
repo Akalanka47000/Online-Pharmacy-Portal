@@ -37,5 +37,25 @@
         echo json_encode($results);
         
     }
+    $function=$_POST["function"];
+    
+    if($function == "getProductBrands"){
+        $sql = "";
+        $sql = "SELECT DISTINCT productBrand FROM Products  ";
+        $result == $conn->query($sql);
+
+         $results = array();
+        while($row = $result->fetch_assoc()){
+            $results[] = $row;
+        } 
+
+        echo json_encode($results);
+
+    }
+
+
+
+
+
     $conn->close();
 ?>
